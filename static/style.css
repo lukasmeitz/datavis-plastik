@@ -10,7 +10,7 @@ body {
     position: absolute;
     display: flex;
     flex-flow: column;
-    transition: transform 330ms;
+    transition: transform 430ms;
 }
 
 .image_box div {
@@ -28,7 +28,7 @@ body {
     position: absolute;
     display: flex;
     flex-flow: column;
-    transition: transform 330ms;
+    transition: transform 430ms;
 }
 
 .text_box div {
