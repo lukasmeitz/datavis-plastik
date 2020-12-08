@@ -26,11 +26,27 @@ window.addEventListener('wheel', function(event)
         offset += window.innerHeight;
     }
 
-    image_box.style.transform = "translateY(" + offset + "px)";
-    text_box.style.transform = "translateY(" + (offset * 1.5) + "px)";
+    if(offset > 0) {
+        offset = 0;
+        return;
+    }
+
+
+    text_box.style.transform = "translateY(" + (offset * 1.0) + "px)";
     background_box.style.transform = "translateY(" + (offset * 0.5) + "px)";
+    transition_stuff(image_box, offset);
 
 });
+
+
+async function transition_stuff(image_box, offset) {
+    image_box.classList.toggle("transparent");
+    await new Promise(r => setTimeout(r, 200));
+    image_box.style.transform = "translateY(" + offset + "px)";
+    image_box.classList.toggle("transparent");
+    await new Promise(r => setTimeout(r, 200));
+
+}
 
 
 // make the slideshow
@@ -72,9 +88,9 @@ function make_slides_from_data() {
         var text_field = document.getElementById(ids[i] + "_text");
         text_field.style.width = w + 'px';
         if( i == 0) {
-            text_field.style.height = (h * 1.25 ) + 'px';
+            text_field.style.height = (h * 1.0) + 'px';
         } else {
-            text_field.style.height = (h * 1.5) + 'px';
+            text_field.style.height = (h * 1.0) + 'px';
         }
 
     }

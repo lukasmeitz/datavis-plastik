@@ -6,61 +6,94 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Plastik</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="dany_css.css">
 </head>
 <body>
 
+<!--This is the Image box, which contains all divs that hold images
+    The image divs are resized by a script, you do not need to care about it -->
     <div id="image_box" class="image_box">
-        <div id="kolben_1">
-            <center>
-                <img src="Kugel_1.png" alt="" >
-            </center>
+
+        <!-- This is one image slide div -->
+        <div id="kolben_1" class="center_image">
+                <!-- You can easily embed images into this div, they get centered automatically -->
+                <img src="Kugel_1.png" alt="" style="height: 60%;">
         </div>
-        <div id="kolben_2">
-            <center>
-                <img src="Kugel_1_flipped.png" alt="" >
-            </center>
+
+        <!-- This is the next image slide div -->
+        <div id="kolben_2" class="center_image">
+                <img src="Kugel_1_flipped.png" alt="" style="height: 60%;">
         </div>
+
+        <!-- This is the next image slide div -->
         <div id="maennchen_1">
 
-        </div>
-        <div id="maennchen_2">
+            <!-- Here, we create three inner divs for a three-column view of images
+                 The important thing is to assign center_image class to the parent of the image -->
+            <div class="center_image">
+                <img src="Kolben_rot.png" alt="" style="height: 50%;">
+            </div>
+            <div class="center_image">
+                <img src="Person.png" alt="" style="height: 50%;">
+            </div>
+            <div class="center_image">
+                <img src="haufen.png" alt="" style="height: 50%;">
+            </div>
 
         </div>
+
+        <!-- This is the next image slide div -->
+        <div id="maennchen_2" class="center_image">
+            <!-- An empty div will create an emtpy slide -->
+        </div>
+
     </div>
 
+
+    <!-- This is text box div, containing all text-related content
+         The text will be overlayed onto the images and scrolled by a parallax-effect
+         Again, do not care about sizing, just about structure -->
     <div id="text_box" class="text_box">
-        <div id="kolben_1_text">
-            Die unsichtbaren Gefahren des Plastik
+
+        <!-- Analogous to the Images, you have a center_text class
+             You can display text in a <p> tag easily -->
+        <div id="kolben_1_text" class="center_text">
+            <p style="margin-bottom: 5%;">Die unsichtbaren Gefahren des Plastik</p>
         </div>
+
+        <!-- This is the next text slide div -->
         <div id="kolben_2_text">
 
         </div>
-        <div id="maennchen_1_text" class="row" id = "row1">
-            <div class="column">
-                <div class="column_text">
-                    <p>Column 1: die Chemikalien und die kleinen Plastikteilchen</p>
-                </div>
+
+        <!-- This is the next text slide div -->
+        <div id="maennchen_1_text">
+
+            <!-- Again, we create a three-column view by embedding three divs -->
+            <div class="center_text">
+
+                <!-- You can override the vertical placement of the text
+                     by using the margin-bottom style tag as shown here -->
+                <p style="margin-bottom: 20%;">Chemikalien</p>
             </div>
 
-            <div class="column">
-                <div class="column_text">
-                </div>
+            <!-- Second column div -->
+            <div class="center_text">
 
             </div>
 
-            <div class="column">
-                <div class="column_text">
-                    <p>Column 2: die Chemikalien und die kleinen Plastikteilchen</p>
-                </div>
+            <!-- Third column div -->
+            <div class="center_text">
+                <p style="margin-bottom: 20%;">Mikroplastik</p>
             </div>
         </div>
-        <div id="maennchen_2_text">
-            maennchen_2_text
 
+        <div id="maennchen_2_text" class="center_text">
+            <p>Sample Text</p>
         </div>
+
     </div>
 
+    <!-- You do not need to care about the background, it is handled by a script -->
     <div id="background_box" class="background_box">
     </div>
 
