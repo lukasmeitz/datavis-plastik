@@ -48,6 +48,26 @@ async function transition_stuff(image_box, offset) {
 
 }
 
+function mouseEvent() {
+    document.getElementById('div_mouseover1').addEventListener("mousemove",
+        function(){mouseOverAndOut("div_mouseover1","div_mouseout1");} );
+    document.getElementById('div_mouseover2').addEventListener("mousemove",
+        function(){mouseOverAndOut("div_mouseover2","div_mouseout2");} );
+    document.getElementById('div_mouseover3').addEventListener("mousemove",
+        function(){mouseOverAndOut("div_mouseover3","div_mouseout3");} );
+    document.getElementById('div_mouseout1').addEventListener("mouseout",
+        function(){mouseOverAndOut("div_mouseout1","div_mouseover1");} );
+    document.getElementById('div_mouseout2').addEventListener("mouseout",
+        function(){mouseOverAndOut("div_mouseout2","div_mouseover2");} );
+    document.getElementById('div_mouseout3').addEventListener("mouseout",
+        function(){mouseOverAndOut("div_mouseout3","div_mouseover3");} );
+
+    function mouseOverAndOut(over_div, out_div) {
+        document.getElementById(""+over_div+"").style.display ="none";
+        document.getElementById(""+out_div+"").style.display ="flex";
+    }
+}
+
 
 // make the slideshow
 function make_slides_from_data() {
@@ -72,15 +92,21 @@ function make_slides_from_data() {
     background.style.height = '5760px';
     background_box.appendChild(background);
 
+    mouseEvent();
+
+
+
     // id list
-    var ids = ["kolben_1", "kolben_2", "maennchen_1", "maennchen_2"];
+    var ids = ["kolben_1", "kolben_2", "maennchen_1", "maennchen_2", "over_image"];
 
     // loop through our prepared data to generate a slideshow
     var i;
+
     for(i = 0; i < ids.length; i++){
 
         // scale the image´s parent div
         var slide_field = document.getElementById(ids[i]);
+        console.log("slide_field "+ ids.length);
         slide_field.style.width = w + 'px';
         slide_field.style.height = h + 'px';
 
@@ -96,5 +122,6 @@ function make_slides_from_data() {
     }
 
 }
+
 
 make_slides_from_data();

@@ -38,11 +38,18 @@ body {
 }
 
 .center_image img {
-  margin: auto;
+    margin: auto;
 }
 
+.center_image_mousemove {
+    height: 100%;
+    margin: auto;
 
+}
 
+.center_image_mousemove img {
+    margin: auto;
+}
 
 
 .text_box {
