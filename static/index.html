@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Plastik</title>
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,79 +17,81 @@
     <div id="image_box" class="image_box">
 
         <!-- This is one image slide div -->
-        <div id="kolben_1" class="center_image">
+        <div id="plastikkugel" class="center_image">
                 <!-- You can easily embed images into this div, they get centered automatically -->
-                <img src="Kugel_1.png" alt="" style="height: 60%;">
+
+            <img src="image/Screen_1_Kugel.png" alt=""
+                 style="height: 80%;z-index: 1; margin-top: 7%;">
         </div>
 
         <!-- This is the next image slide div -->
-        <div id="kolben_2" class="center_image">
-                <img src="Kugel_1_flipped.png" alt="" style="height: 60%;">
-        </div>
-
-        <!-- This is the next image slide div -->
-        <div id="maennchen_1">
+        <div id="mensch">
 
             <!-- Here, we create three inner divs for a three-column view of images
                  The important thing is to assign center_image class to the parent of the image -->
             <div class="center_image">
-                <img src="Kolben_rot.png" alt="" style="height: 50%;">
+                <img src="image/Screen_2_Chemikalienglas.png" alt="" style="height: 70%;">
             </div>
             <div class="center_image">
-                <img src="Person.png" alt="" style="height: 50%;">
+                <img src="image/Screen_2_Character.png" alt="" style="height: 50%;">
             </div>
             <div class="center_image">
-                <img src="haufen.png" alt="" style="height: 50%;">
+                <img src="image/Screen_2_Mikroplastikhäufchen.png" alt="" style="height: 70%;">
             </div>
 
         </div>
 
         <!-- This is the next image slide div -->
-        <div id="maennchen_2" class="center_image">
+        <div id="groessen" class="center_image">
             <!-- An empty div will create an emtpy slide -->
+            <img src="image/Screen_3_Kugeln.png" alt="" style="height: 100%; z-index: 1;">
+        </div>
+
+        <div id="insel" class="center_image">
+            <!-- An empty div will create an emtpy slide -->
+            <img src="image/Screen_4_Welt.png" alt="" style="height: 80%;">
         </div>
 
         <div id="over_image">
 
             <!-- Here, we create three inner divs for a three-column view of images
-                 The important thing is to assign center_image class to the parent of the image
+                 The important thing is to assign center_image class to the parent of the image-->
 
-            <div class="center_image_mousemove" style="background-color: lightgray">
-                    <img id="div_mouseover1" src="haut.png" alt="" style="width: 50%;" >
-                    <img id="div_mouseout1" src="luft.png" alt=""  style="width: 50%;display: none;">
-            </div>
-
-            <div class="center_image_mousemove" style="background-color: #c6c6c6">
-                <img id="div_mouseover2" src="luft.png" alt="" style="width: 50%;">
-                <img id="div_mouseout2" src="land.svg" alt="" style="width: 50%;display: none;">
-            </div>
-            <div class="center_image_mousemove" style="background-color: gray">
-                <img id="div_mouseover3" src="land.svg" alt="" style="width: 50%;">
-                <img id="div_mouseout3" src="haut.png" alt="" style="width: 50%;display: none;">
-            </div>-->
-
-            <div id="div_mouseover1"  class="center_image_mousemove" style="background-color: lightgray">
-                <img src="haut.png" alt="" style="width: 50%;" >
-
-            </div>
-            <div class="center_image_mousemove" id="div_mouseout1"  style="background-color: lightgray; display: none;">
-                <img src="luft.png" alt=""  style="width: 50%;">
+            <div style="background-color: #F96D4B;" class="center_text">
+                <p style="color: #FFFFFF; font-size: 48pt;">Hautkontakt</p>
+                <img src="image/Linke_Spalte_Hautkontakt.png" alt="" style="width: 70%;">
             </div>
 
-            <div id="div_mouseover2" class="center_image_mousemove" style="background-color: #c6c6c6">
-                <img  src="luft.png" alt="" style="width: 50%;">
-            </div>
-            <div id="div_mouseout2" class="center_image_mousemove" style="background-color: #c6c6c6; display: none;">
-                <img  src="land.svg" alt="" style="width: 50%;">
+            <div style="background-color: #28A9AF;" class="center_text">
+                <p style="color: #FFFFFF; font-size: 48pt;">Einatmung</p>
+                <img src="image/Mittlere_Spalte_Einatmung.png" alt="" style="width: 70%;">
             </div>
 
-            <div id="div_mouseover3" class="center_image_mousemove" style="background-color: gray">
-                <img  src="land.svg" alt="" style="width: 50%;">
-            </div>
-            <div id="div_mouseout3" class="center_image_mousemove" style="background-color: gray; display: none;">
-                <img  src="haut.png" alt="" style="width: 50%;">
+            <div style="background-color: #23607A;" class="center_text">
+                <p style="color: #FFFFFF; font-size: 48pt;">Orale Aufnahme</p>
+                <img src="image/Rechte_Spalte_Konsum.png" alt="" style="width: 70%;">
             </div>
 
+        </div>
+
+        <div id="auswirkungen_1">
+
+            <div class="center_image"
+                 style="width: 30%;  height: 100%; background-color: #0E162A;">
+            </div>
+
+            <div class="center_image"
+                 style="width: 70%;  height: 100%">
+                <img src="image/Screen_6_Menschen_vorne.png" alt="" style="height: 80%;">
+            </div>
+
+        </div>
+
+        <div id="objekte" class="center_image">
+            <img src="image/Screen_8_Objekte.png" style="height: 100%;">
+        </div>
+
+        <div id="impressum" class="center_image">
         </div>
 
     </div>
@@ -99,45 +104,123 @@
 
         <!-- Analogous to the Images, you have a center_text class
              You can display text in a <p> tag easily -->
-        <div id="kolben_1_text" class="center_text">
-            <p style="margin-bottom: 5%;">Die unsichtbaren Gefahren des Plastik</p>
+        <div id="plastikkugel_text" class="center_text">
+            <!-- <p style="margin-bottom: 40%; z-index: 0;">Die unsichtbaren Gefahren des Plastik</p>
+            -->
+
+            <img src="image/Screen_1_Titel.png" alt=""
+                 style="width: 80%;z-index: 0;  margin-top: 0%;">
         </div>
 
         <!-- This is the next text slide div -->
-        <div id="kolben_2_text">
-
-        </div>
-
-        <!-- This is the next text slide div -->
-        <div id="maennchen_1_text">
+        <div id="mensch_text">
 
             <!-- Again, we create a three-column view by embedding three divs -->
             <div class="center_text">
 
                 <!-- You can override the vertical placement of the text
                      by using the margin-bottom style tag as shown here -->
-                <p style="margin-bottom: 20%;">Chemikalien</p>
+                <p style="margin-bottom: 20%;"></p>
             </div>
 
             <!-- Second column div -->
             <div class="center_text">
-
+                <p style="margin-top: 5%;"></p>
             </div>
 
             <!-- Third column div -->
             <div class="center_text">
-                <p style="margin-bottom: 20%;">Mikroplastik</p>
+                <p style="margin-bottom: 20%;"></p>
             </div>
         </div>
 
-        <div id="maennchen_2_text" class="center_text">
-            <p>Sample Text</p>
+        <div id="groessen_text">
+
+            <!-- Again, we create a three-column view by embedding three divs -->
+            <div class="center_text">
+
+                <!-- You can override the vertical placement of the text
+                     by using the margin-bottom style tag as shown here -->
+                <p style="margin-top: 10%;"></p>
+            </div>
+
+            <!-- Third column div -->
+            <div class="center_text" >
+                <p style="margin-top: 10%; "></p>
+            </div>
+        </div>
+
+        <div id="insel_text">
+
+
+        </div>
+
+
+        <div id="over_image_text">
+
+            <!-- Here, we create three inner divs for a three-column view of images
+                 The important thing is to assign center_image class to the parent of the image-->
+
+            <div class="center_image_mousemove" style="background-color: #C3341E;">
+                <img src="image/Screen_5_Hand.png" >
+            </div>
+
+            <div class="center_image_mousemove" style="background-color: #19686C;">
+                <img src="image/Screen_5_Nase.png" >
+            </div>
+
+            <div class="center_image_mousemove" style="background-color: #0F1932;">
+                <img src="image/Screen_5_Mund.png" >
+            </div>
+
+        </div>
+
+
+         <div id="auswirkungen_1_text">
+
+            <!-- Here, we create three inner divs for a three-column view of images
+                 The important thing is to assign center_image class to the parent of the image-->
+
+            <div class="side_text"
+                 style="width: 30%;  height: 100%;">
+
+                <p style="font-size: 32pt; font-weight: bold;">
+                    Was passiert, wenn die Chemikalien in unserem Körper sind?</p>
+
+                <p style="font-size: 18pt;">
+                    Folgende Stoffe nehmen wir etwas genauer unter die Lupe:</p>
+
+                <div style="width:100%; margin: 50px auto; display: flex; flex-flow: row;">
+                    <img src="image/Bisphenol_A.png" style="margin: auto; height:30%;">
+                    <img src="image/Flammschutzmittel.png" style="margin: auto; height:30%;">
+                    <img src="image/Phthalate.png" style="margin: auto; height:30%;">
+                    <img src="image/Schwermetalle.png" style="margin: auto; height:30%;">
+                </div>
+
+            </div>
+
+            <div class="center_text"
+                 style="width: 70%;  height: 100%">
+            </div>
+
+        </div>
+
+        <div id="objekte_text">
+            <img src="image/Letze_Textbubble.png" style="margin: auto; width: 100%;">
+        </div>
+
+
+        <div id="impressum_text" class="center_text">
+            <p style="font-size: 49pt;">Impressum</p>
         </div>
 
     </div>
 
     <!-- You do not need to care about the background, it is handled by a script -->
     <div id="background_box" class="background_box">
+    </div>
+
+    <div id="bubble_box" class="background_box">
     </div>
 
     <script src="js.js"></script>

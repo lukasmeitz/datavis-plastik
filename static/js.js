@@ -18,8 +18,9 @@ window.addEventListener('wheel', function(event)
     var image_box = document.getElementById('image_box');
     var text_box = document.getElementById('text_box');
     var background_box = document.getElementById('background_box');
+    var bubble_box = document.getElementById('bubble_box');
 
-    // offset -= event.deltaY * 20;
+    //offset -= event.deltaY * 20;
     if(event.deltaY > 0) {
         offset -= window.innerHeight;
     } else {
@@ -33,7 +34,8 @@ window.addEventListener('wheel', function(event)
 
 
     text_box.style.transform = "translateY(" + (offset * 1.0) + "px)";
-    background_box.style.transform = "translateY(" + (offset * 0.5) + "px)";
+    background_box.style.transform = "translateY(" + (offset * 0.2) + "px)";
+    bubble_box.style.transform = "translateY(" + (offset * 2.0) + "px)";
     transition_stuff(image_box, offset);
 
 });
@@ -46,26 +48,6 @@ async function transition_stuff(image_box, offset) {
     image_box.classList.toggle("transparent");
     await new Promise(r => setTimeout(r, 200));
 
-}
-
-function mouseEvent() {
-    document.getElementById('div_mouseover1').addEventListener("mousemove",
-        function(){mouseOverAndOut("div_mouseover1","div_mouseout1");} );
-    document.getElementById('div_mouseover2').addEventListener("mousemove",
-        function(){mouseOverAndOut("div_mouseover2","div_mouseout2");} );
-    document.getElementById('div_mouseover3').addEventListener("mousemove",
-        function(){mouseOverAndOut("div_mouseover3","div_mouseout3");} );
-    document.getElementById('div_mouseout1').addEventListener("mouseout",
-        function(){mouseOverAndOut("div_mouseout1","div_mouseover1");} );
-    document.getElementById('div_mouseout2').addEventListener("mouseout",
-        function(){mouseOverAndOut("div_mouseout2","div_mouseover2");} );
-    document.getElementById('div_mouseout3').addEventListener("mouseout",
-        function(){mouseOverAndOut("div_mouseout3","div_mouseover3");} );
-
-    function mouseOverAndOut(over_div, out_div) {
-        document.getElementById(""+over_div+"").style.display ="none";
-        document.getElementById(""+out_div+"").style.display ="flex";
-    }
 }
 
 
@@ -81,23 +63,26 @@ function make_slides_from_data() {
 
     // we start by preparing our scroll boxes, one for each moving layer
     var background_box = document.getElementById('background_box');
+    var bubble_box = document.getElementById('bubble_box');
     var image_box = document.getElementById('image_box');
     var text_box = document.getElementById('text_box');
 
-
     // set the background
     var background = document.createElement("div");
-    background.style.backgroundImage = "url('Background.png')";
-    background.style.width = '100%';
-    background.style.height = '5760px';
+    background.style.backgroundImage = "url('image/Bubble_Schicht_1.png')";
+    background.style.width = w + 'px';
+    background.style.height =  (1 / (3840 / w)) * 15120 + 'px';
     background_box.appendChild(background);
 
-    mouseEvent();
-
-
+    var bubble = document.createElement("div");
+    bubble.style.backgroundImage = "url('image/Textbubbles.png')";
+    bubble.style.width = w + 'px';
+    bubble.style.height =  24147/2 + 'px';
+    bubble_box.appendChild(bubble);
 
     // id list
-    var ids = ["kolben_1", "kolben_2", "maennchen_1", "maennchen_2", "over_image"];
+    var ids = ["plastikkugel", "mensch", "groessen", "insel",
+    "over_image", "auswirkungen_1", "objekte", "impressum"];
 
     // loop through our prepared data to generate a slideshow
     var i;
