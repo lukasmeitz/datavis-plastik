@@ -82,7 +82,8 @@ function make_slides_from_data() {
 
     // id list
     var ids = ["plastikkugel", "mensch", "groessen", "insel",
-    "over_image", "auswirkungen_1", "objekte", "impressum"];
+    "over_image", "auswirkungen_1", "auswirkungen_2", "auswirkungen_3",
+    "auswirkungen_4", "auswirkungen_5", "objekte", "impressum"];
 
     // loop through our prepared data to generate a slideshow
     var i;
