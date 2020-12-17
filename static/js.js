@@ -50,6 +50,73 @@ async function transition_stuff(image_box, offset) {
 
 }
 
+function glassMagnifier() {
+    var isGlassSelected = false;
+    var glass = document.getElementById("glass");
+    var glass_img = document.getElementById("magnifier-glass");
+    var ende_Screen = document.getElementById("objekte");
+    var particle_image = document.getElementById("particle_image");
+
+    glass.addEventListener("mousedown", function (e) {
+        e.preventDefault();
+        isGlassSelected = true;
+        console.log("mouse ist down!!!!!!");
+    });
+    glass.addEventListener("mousemove", moveMagnifier);
+    ende_Screen.addEventListener("mousemove", moveMagnifier);
+
+    glass.addEventListener("mouseup", function (e) {
+        e.preventDefault();
+        isGlassSelected = false;
+        console.log("mouse ist up*******");
+    });
+
+    function moveMagnifier(event) {
+        let pos, x, y;
+        let w = glass_img.offsetWidth / 2;
+        let h = glass_img.offsetHeight / 2;
+        event.preventDefault();
+
+        if(isGlassSelected){
+            pos = getCursorPos(event, ende_Screen);
+            x = pos.x;
+            y = pos.y;
+            console.log("is moved x= "+ x +" y= "+ y);
+
+            /*prevent the magnifier glass from being positioned outside the image:*/
+            if (x > ende_Screen.width - (w / 3)) {x = ende_Screen.width - (w / 3);}
+            if (x < w / 4) {x = w / 4;}
+            if (y > ende_Screen.height - (h / 3)) {y = ende_Screen.height - (h / 3);}
+            if (y < h/4) {y = h / 4;}
+            /*set the position of the magnifier glass:*/
+            glass_img.style.left = ((x - w)-50) + "px";
+            glass_img.style.top = ((y - h)-50) + "px";
+            //cir_red.style.left = x + "px";
+            //cir_red.style.top = y+ "px";
+            particle_clipping(pos, particle_image);
+        }
+    }
+    function getCursorPos(e,img) {
+        let a, x = 0, y = 0;
+        e = e || window.event;
+        /*get the x and y positions of the image:*/
+        a = img.getBoundingClientRect();
+        /*calculate the cursor's x and y coordinates, relative to the image:*/
+        x = e.pageX - a.left;
+        y = e.pageY - a.top;
+        /*consider any page scrolling:*/
+        x = x - window.pageXOffset;
+        y = y - window.pageYOffset;
+        return {x : x, y : y};
+    }
+    function particle_clipping(event,particle_image){
+        var x = event.x-90;
+        var y = event.y-110;
+        particle_image.style = "clip-path: circle(90px at "+x+"px "+y+"px);";
+
+    }
+}
+
 
 // make the slideshow
 function make_slides_from_data() {
@@ -110,4 +177,7 @@ function make_slides_from_data() {
 }
 
 
+
+
 make_slides_from_data();
+glassMagnifier();
