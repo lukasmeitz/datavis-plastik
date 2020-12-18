@@ -1,9 +1,12 @@
 
-// make page pretty
+
+
+/* make page pretty */
 document.body.style.overflow = 'hidden';
 
 
-// handle the scrolling stuffs
+
+/* handle the scrolling stuffs */
 var offset = 0;
 window.addEventListener('wheel', function(event)
 {
@@ -32,6 +35,10 @@ window.addEventListener('wheel', function(event)
         return;
     }
 
+    page_number = -1 * offset / window.innerHeight;
+
+    console.log("page number: " + page_number);
+
 
     text_box.style.transform = "translateY(" + (offset * 1.0) + "px)";
     background_box.style.transform = "translateY(" + (offset * 0.2) + "px)";
@@ -40,16 +47,28 @@ window.addEventListener('wheel', function(event)
 
 });
 
-
 async function transition_stuff(image_box, offset) {
     image_box.classList.toggle("transparent");
     await new Promise(r => setTimeout(r, 200));
     image_box.style.transform = "translateY(" + offset + "px)";
     image_box.classList.toggle("transparent");
     await new Promise(r => setTimeout(r, 200));
+}
+
+
+
+/* handle scrolling bar stuff
+    TODO: DANY */
+function setScrollBar(page_number) {
+
+
 
 }
 
+
+
+
+/* Handle the magnifying glass interaction */
 function glassMagnifier() {
     var isGlassSelected = false;
     var glass = document.getElementById("glass");
@@ -118,7 +137,74 @@ function glassMagnifier() {
 }
 
 
-// make the slideshow
+
+/* handle the health issue info view */
+function toggle_health(num_issue) {
+
+    var issues = ["bpa", "fsm", "pht", "hm"];
+    console.log("issue is: " + issues[num_issue]);
+
+    for(var i = 0; i < issues.length; i++) {
+
+        var name = issues[i] + "_button_health";
+        console.log(name);
+        var elem = document.getElementById(name);
+
+        if(i == num_issue){
+            elem.classList.remove("passive");
+            elem.classList.add("active");
+        } else {
+            elem.classList.remove("active");
+            elem.classList.add("passive");
+        }
+
+    }
+
+
+    var pictures = ["image/Screen_6_Menschen_vorne.png",
+    "image/Screen_6_Menschen_seitlich.png",
+    "image/Screen_6_Menschen_seitlich_0.png",
+    "image/Screen_6_Menschen_seitlich_1.png"];
+    var picture = document.getElementById("health_issue_picture").src = pictures[num_issue];
+
+}
+
+
+/* handle the product issue info view */
+function toggle_products(num_issue) {
+
+    var issues = ["bpa", "fsm", "pht", "hm"];
+    console.log("issue is: " + issues[num_issue]);
+
+    for(var i = 0; i < issues.length; i++) {
+
+        var name = issues[i] + "_button_products";
+        console.log(name);
+        var elem = document.getElementById(name);
+
+        if(i == num_issue){
+            elem.classList.remove("passive");
+            elem.classList.add("active");
+        } else {
+            elem.classList.remove("active");
+            elem.classList.add("passive");
+        }
+
+    }
+
+
+    var pictures = ["Icons für BPA",
+    "Icons für Flammschutzmittel",
+    "Icons für Phthalate",
+    "Icons für Schwermetalle"];
+    var picture = document.getElementById("products_issue_text").innerHTML = pictures[num_issue];
+
+}
+
+
+
+
+/* make the slideshow */
 function make_slides_from_data() {
 
     // these are our resources
@@ -149,8 +235,7 @@ function make_slides_from_data() {
 
     // id list
     var ids = ["plastikkugel", "mensch", "groessen", "insel",
-    "over_image", "auswirkungen_1", "auswirkungen_2", "auswirkungen_3",
-    "auswirkungen_4", "auswirkungen_5", "objekte", "impressum"];
+    "over_image", "auswirkungen_1", "auswirkungen_2", "objekte", "impressum"];
 
     // loop through our prepared data to generate a slideshow
     var i;

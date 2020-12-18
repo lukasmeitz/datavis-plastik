@@ -121,6 +121,35 @@ body {
     margin-bottom: 0px;
 }
 
+.active {
+    background: #1e305c;
+}
+
+.passive {
+    background: #00000000;
+}
+
+
+.icon_toggle_container {
+    width:100%;
+    margin: 50px auto;
+    display: flex;
+    flex-flow: row;
+}
+
+.icon_toggle_container button {
+    margin: auto;
+    height: 140px;
+    width: 120px;
+    border: none;
+}
+
+.icon_toggle_container button img {
+    margin: auto;
+    height: 80%;
+}
+
+
 
 
 .background_box {
