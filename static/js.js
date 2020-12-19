@@ -51,6 +51,7 @@ async function transition_stuff(image_box, offset) {
     image_box.classList.toggle("transparent");
     await new Promise(r => setTimeout(r, 200));
     image_box.style.transform = "translateY(" + offset + "px)";
+    await new Promise(r => setTimeout(r, 200));
     image_box.classList.toggle("transparent");
     await new Promise(r => setTimeout(r, 200));
 }
@@ -156,6 +157,17 @@ function toggle_health(num_issue) {
         } else {
             elem.classList.remove("active");
             elem.classList.add("passive");
+        }
+
+
+        var desc = issues[i] + "_description";
+        var element = document.getElementById(desc);
+        if(i == num_issue){
+            element.classList.remove("hide");
+            element.classList.add("show");
+        } else {
+            element.classList.remove("show");
+            element.classList.add("hide");
         }
 
     }

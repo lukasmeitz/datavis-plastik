@@ -78,8 +78,6 @@ body {
 
 .text_box div {
     width: 100%;
-    text-align: center;
-    font-size: 48pt;
     position: relative;
     display: flex;
 }
@@ -149,6 +147,33 @@ body {
     height: 80%;
 }
 
+.health_info_box {
+
+    background-color: #ad4d2f;
+    height: 30%;
+    margin: 50px;
+    border-thickness: 10px;
+    overflow: auto;
+    padding: 20px;
+
+}
+
+.health_info_box p {
+
+    color: white;
+    font-size: 18pt;
+    margin: auto;
+    text-align: left;
+
+}
+
+.show {
+    display: inline;
+}
+
+.hide {
+    display:none;
+}
 
 
 
