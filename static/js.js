@@ -18,13 +18,18 @@ window.addEventListener('wheel', function(event)
     event.preventDefault();
     event.stopPropagation();
 
+    scrolling(event.deltaY);
+
+});
+
+function scrolling(deltaY) {
     var image_box = document.getElementById('image_box');
     var text_box = document.getElementById('text_box');
     var background_box = document.getElementById('background_box');
     var bubble_box = document.getElementById('bubble_box');
 
     //offset -= event.deltaY * 20;
-    if(event.deltaY > 0) {
+    if(deltaY > 0) {
         offset -= window.innerHeight;
     } else {
         offset += window.innerHeight;
@@ -35,8 +40,9 @@ window.addEventListener('wheel', function(event)
         return;
     }
 
-    page_number = -1 * offset / window.innerHeight;
+    let page_number = -1 * offset / window.innerHeight;
 
+    setScrollBar(page_number);
     console.log("page number: " + page_number);
 
 
@@ -44,14 +50,12 @@ window.addEventListener('wheel', function(event)
     background_box.style.transform = "translateY(" + (offset * 0.2) + "px)";
     bubble_box.style.transform = "translateY(" + (offset * 2.0) + "px)";
     transition_stuff(image_box, offset);
-
-});
+}
 
 async function transition_stuff(image_box, offset) {
     image_box.classList.toggle("transparent");
     await new Promise(r => setTimeout(r, 200));
     image_box.style.transform = "translateY(" + offset + "px)";
-    await new Promise(r => setTimeout(r, 200));
     image_box.classList.toggle("transparent");
     await new Promise(r => setTimeout(r, 200));
 }
@@ -62,6 +66,30 @@ async function transition_stuff(image_box, offset) {
     TODO: DANY */
 function setScrollBar(page_number) {
 
+    for(var i=0; i <= 8; i++){
+        var elem = document.getElementById(i+"");
+        if(i == page_number){
+            elem.classList.add("active");
+        } else {
+            elem.classList.remove("active");
+        }
+    }
+
+}
+
+function setClickScrollPage(page_number) {
+    let deltaY;
+    for(let i=0; i <= 8; i++){
+        let elem = document.getElementById(i+"");
+
+        if(elem.classList.contains("active")){
+            deltaY = page_number - i ;
+        }
+    }
+
+    for(let j = 0; j < Math.abs(deltaY) ; j++){
+        scrolling(deltaY);
+    }
 
 
 }

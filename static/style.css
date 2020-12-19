@@ -190,3 +190,51 @@ body {
     background-position: center;
     background-size: auto;
 }
+
+
+.vNav {
+    position: fixed;
+    top: 25%;
+    left: 90%;
+    width: 50px;
+    z-index: 9999;
+    list-style-type: none;
+}
+
+.vNav ul {
+    position: relative;
+    padding: 3px;
+    padding-left: 35%;
+}
+
+.vNav ul li{
+    position: relative;
+    padding-bottom: 20px;
+    padding-left: 35%;
+    color: rgb(113,135,133);
+
+}
+
+.vNav a{
+    display: block;
+    width: 15px;
+    height: 15px;
+    text-indent: -9999px;
+    border-radius: 50%;
+    border: 2px solid;
+    border-color: rgb(113,135,133);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.vNav a:hover{
+    border-radius: 50%;
+    background-color: rgb(113,135,133);
+    text-decoration: none;
+}
+
+.vNav a.active{
+    border-radius: 50%;
+    background-color: rgb(2, 250, 231);
+    text-decoration: none;
+}
