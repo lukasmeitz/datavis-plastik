@@ -62,7 +62,7 @@
 
         <div id="insel" class="center_image">
             <!-- An empty div will create an emtpy slide -->
-            <img src="image/Screen_4_Welt.png" alt="" style="height: 80%;">
+            <img src="image/Insel.png" alt="" style="height: 80%;">
         </div>
 
         <div id="over_image">
@@ -95,7 +95,10 @@
 
             <div class="center_image"
                  style="width: 70%;  height: 100%">
-                <img id="health_issue_picture" src="image/Screen_6_Menschen_vorne.png" alt="" style="height: 80%;">
+                <img id="health_issue_picture"
+                     src="image/Screen_6_Menschen_vorne.png"
+                     alt=""
+                     style="height: 90%; margin-top: 10%;">
             </div>
 
         </div>
@@ -199,11 +202,11 @@
             <div class="side_text"
                  style="width: 30%;  height: 100%;">
 
-                <p style="font-size: 32pt; font-weight: bold;">
+                <p style="font-size: 28pt; font-weight: bold;">
                     Was passiert, wenn Schadstoffe in unserem Körper sind?</p>
 
                 <p style="font-size: 18pt;">
-                    Folgende Stoffe nehmen wir etwas genauer unter die Lupe:</p>
+                    Sieh Dir die Auswirkungen einzelner Schadstoffe an und lass Dir die dazugehörigen Plastikartikel anzeigen:</p>
 
                 <span class="icon_toggle_container">
                     <p style="width: 30px; margin: 0;"></p>
@@ -242,6 +245,10 @@ Da die Phthalate als Weichmacher nicht chemisch an den Kunststoff (PVC) gebunden
 
             <div class="center_text"
                  style="width: 70%;  height: 100%">
+                <button id="health_toggle"
+                        class="toggle_button"
+                        onclick="toggle_health_products()">
+                    Zeige Produkte an, in denen der Schadstoff vorkommt</button>
             </div>
 
         </div>

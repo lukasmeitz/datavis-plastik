@@ -112,6 +112,8 @@ function setClickScrollPage(page_number) {
 
 
 
+
+
 /* Handle the magnifying glass interaction */
 function glassMagnifier() {
     var isGlassSelected = false;
@@ -183,7 +185,16 @@ function glassMagnifier() {
 
 
 /* handle the health issue info view */
-function toggle_health(num_issue) {
+var num_issue_persistence = 0;
+var health_toggle_persistence = true;
+
+function toggle_health(num_issue = -1) {
+
+    if(num_issue == -1){
+        num_issue = num_issue_persistence;
+    } else {
+        num_issue_persistence = num_issue;
+    }
 
     var issues = ["bpa", "fsm", "pht", "hm"];
     console.log("issue is: " + issues[num_issue]);
@@ -220,11 +231,30 @@ function toggle_health(num_issue) {
     "image/Screen_6_Menschen_seitlich.png",
     "image/Screen_6_Menschen_seitlich_0.png",
     "image/Screen_6_Menschen_seitlich_1.png"];
-    var picture = document.getElementById("health_issue_picture").src = pictures[num_issue];
+
+    var products = ["image/BPA_Icon_Übersicht.png",
+    "image/Flammschutzmittel_Icon_Übersicht.png",
+    "image/Phthalate_Icon_Übersicht.png",
+    "image/Schwermetalle_Icon_Übersicht.png"];
+
+    if(health_toggle_persistence){
+        var picture = document.getElementById("health_issue_picture").src = pictures[num_issue];
+    } else {
+        var picture = document.getElementById("health_issue_picture").src = products[num_issue];
+    }
 
 }
 
+function toggle_health_products(){
 
+    var togglebutton = document.getElementById("health_toggle");
+    togglebutton.innerHTML = !health_toggle_persistence ? "Zeige Produkte an, in denen der Schadstoff vorkommt" : "Zeige Auswirkungen";
+
+    health_toggle_persistence = !health_toggle_persistence;
+    console.log("toggle dis, son");
+    toggle_health();
+
+}
 
 
 
