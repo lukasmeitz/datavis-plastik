@@ -228,8 +228,8 @@ function toggle_health(num_issue = -1) {
 
 
     var pictures = ["image/BPA_Koerper.png",
-    "image/Phthalate_Koerper.png",
     "image/Flammschutzmittel_Koerper.png",
+    "image/Phthalate_Koerper.png",
     "image/Schwermetalle_Koerper.png"];
 
     var products = ["image/BPA_Icon_Übersicht.png",
