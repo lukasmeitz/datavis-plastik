@@ -227,10 +227,10 @@ function toggle_health(num_issue = -1) {
     }
 
 
-    var pictures = ["image/Screen_6_Menschen_vorne.png",
-    "image/Screen_6_Menschen_seitlich.png",
-    "image/Screen_6_Menschen_seitlich_0.png",
-    "image/Screen_6_Menschen_seitlich_1.png"];
+    var pictures = ["image/BPA_Koerper.png",
+    "image/Phthalate_Koerper.png",
+    "image/Flammschutzmittel_Koerper.png",
+    "image/Schwermetalle_Koerper.png"];
 
     var products = ["image/BPA_Icon_Übersicht.png",
     "image/Flammschutzmittel_Icon_Übersicht.png",
@@ -248,13 +248,15 @@ function toggle_health(num_issue = -1) {
 function toggle_health_products(){
 
     var togglebutton = document.getElementById("health_toggle");
-    togglebutton.innerHTML = !health_toggle_persistence ? "Zeige Produkte an, in denen der Schadstoff vorkommt" : "Zeige Auswirkungen";
+    togglebutton.innerHTML = !health_toggle_persistence ? "Zeige Produkte" : "Zeige Auswirkungen";
 
     health_toggle_persistence = !health_toggle_persistence;
     console.log("toggle dis, son");
     toggle_health();
 
 }
+
+toggle_health(0);
 
 
 
