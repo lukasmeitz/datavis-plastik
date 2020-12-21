@@ -4,6 +4,7 @@
 /* make page pretty */
 document.body.style.overflow = 'hidden';
 
+var scroll_lock = false;
 
 
 /* handle the scrolling stuffs */
@@ -22,7 +23,21 @@ window.addEventListener('wheel', function(event)
 
 });
 
-function scrolling(deltaY) {
+function scrolling(deltaY, locking=true) {
+
+    if(locking){
+        if(scroll_lock){
+            return;
+        } else {
+            scroll_lock = true;
+            function free_scroll() {
+                scroll_lock = false;
+            }
+
+            setTimeout(free_scroll, 400);
+        }
+    }
+
     var image_box = document.getElementById('image_box');
     var text_box = document.getElementById('text_box');
     var background_box = document.getElementById('background_box');
@@ -56,6 +71,7 @@ async function transition_stuff(image_box, offset) {
     image_box.classList.toggle("transparent");
     await new Promise(r => setTimeout(r, 200));
     image_box.style.transform = "translateY(" + offset + "px)";
+    await new Promise(r => setTimeout(r, 200));
     image_box.classList.toggle("transparent");
     await new Promise(r => setTimeout(r, 200));
 }
@@ -87,7 +103,7 @@ function setClickScrollPage(page_number) {
     }
 
     for(let j = 0; j < Math.abs(deltaY) ; j++){
-        scrolling(deltaY);
+        scrolling(deltaY, locking=false);
     }
 
 
