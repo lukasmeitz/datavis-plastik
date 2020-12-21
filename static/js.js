@@ -62,8 +62,7 @@ async function transition_stuff(image_box, offset) {
 
 
 
-/* handle scrolling bar stuff
-    TODO: DANY */
+/* handle scrolling bar stuff */
 function setScrollBar(page_number) {
 
     for(var i=0; i <= 8; i++){
@@ -210,37 +209,6 @@ function toggle_health(num_issue) {
 }
 
 
-/* handle the product issue info view */
-function toggle_products(num_issue) {
-
-    var issues = ["bpa", "fsm", "pht", "hm"];
-    console.log("issue is: " + issues[num_issue]);
-
-    for(var i = 0; i < issues.length; i++) {
-
-        var name = issues[i] + "_button_products";
-        console.log(name);
-        var elem = document.getElementById(name);
-
-        if(i == num_issue){
-            elem.classList.remove("passive");
-            elem.classList.add("active");
-        } else {
-            elem.classList.remove("active");
-            elem.classList.add("passive");
-        }
-
-    }
-
-
-    var pictures = ["Icons für BPA",
-    "Icons für Flammschutzmittel",
-    "Icons für Phthalate",
-    "Icons für Schwermetalle"];
-    var picture = document.getElementById("products_issue_text").innerHTML = pictures[num_issue];
-
-}
-
 
 
 
@@ -275,7 +243,7 @@ function make_slides_from_data() {
 
     // id list
     var ids = ["plastikkugel", "mensch", "groessen", "insel",
-    "over_image", "auswirkungen_1", "auswirkungen_2", "objekte", "impressum"];
+    "over_image", "auswirkungen_1", "objekte", "impressum"];
 
     // loop through our prepared data to generate a slideshow
     var i;
