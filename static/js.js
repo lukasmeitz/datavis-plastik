@@ -63,7 +63,7 @@ function scrolling(deltaY, locking=true) {
 
     text_box.style.transform = "translateY(" + (offset * 1.0) + "px)";
     background_box.style.transform = "translateY(" + (offset * 0.2) + "px)";
-    bubble_box.style.transform = "translateY(" + (offset * 2.0) + "px)";
+    bubble_box.style.transform = "translateY(" + (offset * 0.4) + "px)";
     transition_stuff(image_box, offset);
 }
 
@@ -295,7 +295,7 @@ function make_slides_from_data() {
     background_box.appendChild(background);
 
     var bubble = document.createElement("div");
-    bubble.style.backgroundImage = "url('image/Textbubbles.png')";
+    bubble.style.backgroundImage = "url('image/Bubble_Schicht_2.png')";
     bubble.style.width = w + 'px';
     bubble.style.height =  24147/2 + 'px';
     bubble_box.appendChild(bubble);
@@ -327,8 +327,6 @@ function make_slides_from_data() {
     }
 
 }
-
-
 
 
 make_slides_from_data();
