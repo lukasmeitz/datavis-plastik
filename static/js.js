@@ -81,7 +81,7 @@ async function transition_stuff(image_box, offset) {
 /* handle scrolling bar stuff */
 function setScrollBar(page_number) {
 
-    for(var i=0; i <= 7; i++){
+    for(var i=0; i <= 8; i++){
         var elem = document.getElementById(i+"");
         if(i == page_number){
             elem.classList.add("active");
@@ -105,7 +105,7 @@ function hideNavLabel(event) {
 
 function setClickScrollPage(page_number) {
     let deltaY;
-    for(let i=0; i <= 7; i++){
+    for(let i=0; i <= 8; i++){
         let elem = document.getElementById(i+"");
 
         if(elem.classList.contains("active")){
@@ -302,7 +302,7 @@ function make_slides_from_data() {
 
     // id list
     var ids = ["plastikkugel", "mensch", "groessen", "insel",
-    "over_image", "auswirkungen_1", "objekte", "impressum"];
+    "over_image", "auswirkungen_1", "objekte", "impressum", "quellen"];
 
     // loop through our prepared data to generate a slideshow
     var i;

@@ -266,3 +266,15 @@ body {
     display: none;
     font-weight: bold;
 }
+
+.quell {
+    margin: auto;
+    width: 80%;
+    height: 70%;
+}
+.quell li{
+    font-family: 'Roboto';
+    font-size: 10pt;
+    color: white;
+    padding-bottom: 15px;
+}
