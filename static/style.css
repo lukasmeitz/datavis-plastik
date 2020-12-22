@@ -55,8 +55,7 @@ body {
 #particle_image {
     clip-path: circle(0px at center);
     height: 100%;
-    width: 80%;
-    padding-left: 10%;
+    width: 100%;
     position: absolute;
 }
 

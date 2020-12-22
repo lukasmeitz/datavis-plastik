@@ -186,9 +186,9 @@ function glassMagnifier() {
         return {x : x, y : y};
     }
     function particle_clipping(event,particle_image){
-        var x = event.x-90;
-        var y = event.y-110;
-        particle_image.style = "clip-path: circle(90px at "+x+"px "+y+"px);";
+        var x = event.x-105;
+        var y = event.y-145;
+        particle_image.style = "clip-path: circle(130px at "+x+"px "+y+"px);";
 
     }
 }
