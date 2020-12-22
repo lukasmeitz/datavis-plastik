@@ -256,3 +256,14 @@ body {
     background-color: rgb(2, 250, 231);
     text-decoration: none;
 }
+.label {
+    position: relative;
+    top: -60%;
+    left: -200%;
+    width: 100%;
+    text-align: right;
+    font-size: 1em;
+    color: rgb(2, 250, 231);
+    display: none;
+    font-weight: bold;
+}

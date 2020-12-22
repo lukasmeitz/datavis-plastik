@@ -81,7 +81,7 @@ async function transition_stuff(image_box, offset) {
 /* handle scrolling bar stuff */
 function setScrollBar(page_number) {
 
-    for(var i=0; i <= 8; i++){
+    for(var i=0; i <= 7; i++){
         var elem = document.getElementById(i+"");
         if(i == page_number){
             elem.classList.add("active");
@@ -92,9 +92,20 @@ function setScrollBar(page_number) {
 
 }
 
+/* show label of navbar */
+function showNavLabel(event) {
+    event.getElementsByClassName("label")[0].style.display = "block";
+}
+/*
+hiden die Label
+ */
+function hideNavLabel(event) {
+    event.getElementsByClassName("label")[0].style.display = "none";
+}
+
 function setClickScrollPage(page_number) {
     let deltaY;
-    for(let i=0; i <= 8; i++){
+    for(let i=0; i <= 7; i++){
         let elem = document.getElementById(i+"");
 
         if(elem.classList.contains("active")){
