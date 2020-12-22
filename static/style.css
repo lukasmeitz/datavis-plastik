@@ -178,12 +178,12 @@ body {
 .toggle_button {
 
     margin: 50px;
-    width: 40%;
-    height: 7%;
+    width: 20%;
+    height: 5%;
     color: white;
     background-color: #ad4d2f;
     border-radius: 10px;
-    font-size: 15pt;
+    font-size: 12pt;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
 
@@ -264,7 +264,8 @@ body {
     font-size: 1em;
     color: rgb(2, 250, 231);
     display: none;
-    font-weight: bold;
+    font-family: 'Roboto';
+    font-weight: 400;
 }
 
 .quell {
