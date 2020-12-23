@@ -230,6 +230,7 @@ function toggle_health(num_issue = -1) {
 
         var desc = issues[i] + "_description";
         var element = document.getElementById(desc);
+        element.parentElement.scrollTop = 0;
         if(i == num_issue){
             element.classList.remove("hide");
             element.classList.add("show");
