@@ -46,3 +46,18 @@
     font-size: 25pt;
 
 }
+
+
+#first_scroll_button {
+
+    animation-name: hop;
+    animation-duration: 2s;
+    animation-iteration-count:infinite;
+
+}
+
+@keyframes hop {
+    0% { transform: translateY(-10px) }
+    50% { transform: translateY(10px)}
+    100% { transform: translateY(-10px)}
+}
