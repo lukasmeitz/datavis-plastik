@@ -1,8 +1,6 @@
 
-
-
 /* make page pretty */
-document.body.style.overflow = 'hidden';
+//document.body.style.overflow = 'hidden';
 
 var scroll_lock = false;
 
@@ -16,10 +14,10 @@ window.addEventListener('wheel', function(event)
     var w = window.innerWidth;
     var h = window.innerHeight;
 
-    event.preventDefault();
-    event.stopPropagation();
+    //event.preventDefault();
+    //event.stopPropagation();
 
-    scrolling(event.deltaY);
+    //scrolling(event.deltaY);
 
 });
 
@@ -43,19 +41,19 @@ function scrolling(deltaY, locking=true) {
     var background_box = document.getElementById('background_box');
     var bubble_box = document.getElementById('bubble_box');
 
-    //offset -= event.deltaY * 20;
-    if(deltaY > 0) {
+    offset -= event.deltaY * 40;
+    /*if(deltaY > 0) {
         offset -= window.innerHeight;
     } else {
         offset += window.innerHeight;
-    }
+    }*/
 
     if(offset > 0) {
         offset = 0;
         return;
     }
 
-    let page_number = -1 * offset / window.innerHeight;
+    let page_number = Math.round(-1 * offset / window.innerHeight);
 
     setScrollBar(page_number);
     console.log("page number: " + page_number);
@@ -296,13 +294,13 @@ function make_slides_from_data() {
     background.style.backgroundImage = "url('image/Bubble_Schicht_1.png')";
     background.style.width = w + 'px';
     background.style.height =  (1 / (3840 / w)) * 15120 + 'px';
-    background_box.appendChild(background);
+    //background_box.appendChild(background);
 
     var bubble = document.createElement("div");
     bubble.style.backgroundImage = "url('image/Bubble_Schicht_2.png')";
     bubble.style.width = w + 'px';
     bubble.style.height =  24147/2 + 'px';
-    bubble_box.appendChild(bubble);
+    //bubble_box.appendChild(bubble);
 
     // id list
     var ids = ["plastikkugel", "mensch", "groessen", "insel",
