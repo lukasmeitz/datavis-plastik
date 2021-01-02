@@ -61,3 +61,33 @@
     50% { transform: translateY(10px)}
     100% { transform: translateY(-10px)}
 }
+
+
+.wiggle {
+
+    animation-name: wiggle_frames;
+    animation-duration: 2s;
+    animation-iteration-count:infinite;
+
+
+
+}@keyframes wiggle_frames {
+    0% { transform: translateY(-3px) }
+    50% { transform: translateY(3px)}
+    100% { transform: translateY(-3px)}
+}
+
+.minor_wiggle {
+
+    animation-name: minor_wiggle_frames;
+  animation-timing-function: linear;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+
+}
+
+@keyframes minor_wiggle_frames {
+    0% { transform: translateY(0px) }
+    50% { transform: translateY(10px)}
+    100% { transform: translateY(0px)}
+}
