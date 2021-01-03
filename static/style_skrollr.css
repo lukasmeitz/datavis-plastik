@@ -139,6 +139,13 @@
     position: relative;
 }
 
+#sixth {
+
+    display: flex;
+    flex-flow: row;
+
+}
+
 
 
 

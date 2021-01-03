@@ -358,5 +358,5 @@ function make_slides_from_data() {
 }
 
 
-make_slides_from_data();
+//make_slides_from_data();
 glassMagnifier();
