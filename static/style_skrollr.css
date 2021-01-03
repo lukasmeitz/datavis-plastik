@@ -30,8 +30,17 @@
     background-size: 100%;
 }
 
+#first_infobutton:hover {
+    transform: translateY(-5px);
+}
+
 #first_infobutton:active {
     background-image: url("new_images/first/Info_Button_pressed.png");
+}
+
+
+.fourth_icon:hover {
+    transform: translateY(-5px);
 }
 
 
@@ -55,6 +64,14 @@
     animation-iteration-count:infinite;
 
 }
+
+
+
+
+
+
+
+
 
 @keyframes hop {
     0% { transform: translateY(-10px) }

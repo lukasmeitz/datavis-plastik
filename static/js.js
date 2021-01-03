@@ -121,6 +121,33 @@ function setClickScrollPage(page_number) {
 
 
 
+/* handle the indirect/direct contact info screen */
+function display_direct(num){
+
+    var images = ["new_images/fourth/1.Kasten.png",
+        "new_images/fourth/2.Kasten.png",
+        "new_images/fourth/3.Kasten.png",
+        "new_images/fourth/4.Kasten.png"];
+
+    var element = document.getElementById("direct_info");
+    element.src = images[num];
+
+}
+display_direct(0);
+
+function display_indirect(num){
+
+    var images = ["new_images/fourth/6.Kasten.png",
+        "new_images/fourth/7.Kasten.png",
+        "new_images/fourth/5.Kasten.png"];
+
+    var element = document.getElementById("indirect_info");
+    element.src = images[num];
+
+}
+display_indirect(0);
+
+
 
 
 /* Handle the magnifying glass interaction */
