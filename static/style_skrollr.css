@@ -14,8 +14,20 @@
 }
 
 #content  div  * {
-    position: absolute;
     font-family: 'Poppins', sans-serif;
+}
+
+
+#content > div > img {
+    position: absolute;
+}
+
+#content > div > p {
+    position: absolute;
+}
+
+#content > div > button {
+    position: absolute;
 }
 
 
@@ -119,6 +131,15 @@
     opacity: 0;
 
 }
+
+
+
+
+#sixth * {
+    position: relative;
+}
+
+
 
 
 
