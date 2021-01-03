@@ -68,7 +68,57 @@
 
 
 
+#products_container {
 
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: row;
+    position: relative;
+
+}
+
+#products_container div {
+
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    position: relative;
+
+}
+
+#products_container > div > p {
+
+    position: relative;
+    margin: 0 auto;
+
+}
+
+#products_container > div > div > img {
+
+    position: relative;
+    left: -50%;
+
+}
+
+
+.fade_out {
+
+    opacity: 1;
+
+    -webkit-transition: opacity 400ms ease-in-out;
+    -moz-transition: opacity 400ms ease-in-out;
+    -o-transition: opacity 400ms ease-in-out;
+    transition: opacity 400ms ease-in-out;
+
+}
+
+.fade_out:hover  {
+
+    opacity: 0;
+
+}
 
 
 
