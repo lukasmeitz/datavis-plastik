@@ -288,7 +288,7 @@ function toggle_health(num_issue = -1) {
 function toggle_health_products(){
 
     var togglebutton = document.getElementById("health_toggle");
-    togglebutton.innerHTML = !health_toggle_persistence ? "Zeige Produkte" : "Zeige Auswirkungen";
+    togglebutton.src = !health_toggle_persistence ? "new_images/sixth/Button_Auswirkungen.png" : "new_images/sixth/Button_Produkte.png";
 
     health_toggle_persistence = !health_toggle_persistence;
     console.log("toggle dis, son");

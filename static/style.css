@@ -96,7 +96,7 @@ body {
 }
 
 .center_text img {
-    margin: auto;
+
 }
 
 
@@ -178,16 +178,14 @@ body {
 
 .toggle_button {
 
+    position: relative;
     margin: 50px;
     width: 20%;
-    height: 5%;
-    color: white;
-    background-color: #ad4d2f;
-    border-radius: 10px;
-    font-size: 12pt;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
 
+}
+
+.toggle_button:active {
+    transform: translateY(3px);
 }
 
 
