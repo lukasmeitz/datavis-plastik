@@ -120,7 +120,7 @@ body {
 }
 
 .active {
-    background: #1e305c;
+    background: #43323E;
 }
 
 .passive {
@@ -130,7 +130,7 @@ body {
 
 .icon_toggle_container {
     width:100%;
-    margin: 50px auto 0px auto;
+    margin: 2% auto;
     display: flex;
     flex-flow: row;
 }
@@ -150,7 +150,7 @@ body {
 .health_info_box {
 
     background-color: #ad4d2f;
-    height: 35%;
+    height: 42%;
     margin: 50px;
     border-thickness: 10px;
     overflow: auto;
@@ -213,7 +213,7 @@ body {
 .vNav {
     position: fixed;
     top: 25%;
-    left: 90%;
+    right: 2%;
     width: 50px;
     z-index: 9999;
     list-style-type: none;

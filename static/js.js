@@ -233,7 +233,7 @@ function toggle_health(num_issue = -1) {
     }
 
     var issues = ["bpa", "fsm", "pht", "hm"];
-    var colors = ["#ff6f4288", "#e6292988", "#bf0d4688", "#af009088"];
+    var colors = ["#43323E", "#43323E", "#43323E", "43323E"];
     console.log("issue is: " + issues[num_issue]);
 
     document.getElementById("health_info_box").style.backgroundColor = colors[num_issue];
