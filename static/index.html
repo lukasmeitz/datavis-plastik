@@ -16,38 +16,100 @@
 
 
 <!--This is a Div to create a Dot Schrollbar! -->
+
 <div class="vNav">
     <ul class="vNav">
-        <li><a id="0"class="active" onclick="setClickScrollPage(0)" onmouseover="showNavLabel(this)" onmouseout="hideNavLabel(this)">
+        <li ><a id="0"
+                data-0="background-color: rgb(135,145,243,1);"
+                data-1300="background-color: rgb(135,145,243,1);"
+                data-1900="background-color: rgb(135,145,243,0);"
+                href="#first"
+                data-menu-top="0"
+                onmouseover="showNavLabel(this)" onmouseout="hideNavLabel(this)">
             <div class="label">Start</div>
         </a></li>
-        <li><a id="1" onclick="setClickScrollPage(1)" onmouseover="showNavLabel(this)" onmouseout="hideNavLabel(this)">
+        <li ><a id="1"
+                data-1300="background-color: rgb(135,145,243,0);"
+                data-1900="background-color: rgb(135,145,243,1);"
+                data-4900="background-color: rgb(135,145,243,1);"
+                data-5500="background-color: rgb(135,145,243,0);"
+                href="#second"
+                data-menu-top="1900"
+                onmouseover="showNavLabel(this)" onmouseout="hideNavLabel(this)">
             <div class="label">Was macht Plastik so gefährlich?</div>
         </a></li>
-        <li><a id="2"onclick="setClickScrollPage(2)" onmouseover="showNavLabel(this)" onmouseout="hideNavLabel(this)">
+        <li ><a id="2"
+                data-5000="background-color: rgb(135,145,243,0);"
+                data-5500="background-color: rgb(135,145,243,1);"
+                data-9500="background-color: rgb(135,145,243,1);"
+                data-10100="background-color: rgb(135,145,243,0);"
+                href="#third"
+                data-menu-top="5500"
+                onmouseover="showNavLabel(this)" onmouseout="hideNavLabel(this)">
             <div class="label">Größenvergleich</div>
         </a></li>
-        <li><a id="3" onclick="setClickScrollPage(3)" onmouseover="showNavLabel(this)" onmouseout="hideNavLabel(this)">
+        <li><a id="3"
+               data-9600="background-color: rgb(135,145,243,0);"
+               data-10100="background-color: rgb(135,145,243,1);"
+               data-15100="background-color: rgb(135,145,243,1);"
+               data-15700="background-color: rgb(135,145,243,0);"
+               href="#fourth"
+               data-menu-top="10100"
+               onmouseover="showNavLabel(this)" onmouseout="hideNavLabel(this)">
             <div class="label">Kontakt mit Kunststoffen</div>
         </a></li>
-        <li><a id="4" onclick="setClickScrollPage(4)" onmouseover="showNavLabel(this)" onmouseout="hideNavLabel(this)">
+        <li><a id="4"
+               data-14600="background-color: rgb(135,145,243,0);"
+               data-15700="background-color: rgb(135,145,243,1);"
+               data-16700="background-color: rgb(135,145,243,1);"
+               data-17300="background-color: rgb(135,145,243,0);"
+               href="#fifth"
+               data-menu-top="16000"
+               onmouseover="showNavLabel(this)" onmouseout="hideNavLabel(this)">
             <div class="label">Aufnahme von Kunststoffen</div>
         </a></li>
-        <li><a id="5" onclick="setClickScrollPage(5)" onmouseover="showNavLabel(this)" onmouseout="hideNavLabel(this)">
+        <li><a id="5"
+               data-16200="background-color: rgb(135,145,243,0);"
+               data-17300="background-color: rgb(135,145,243,1);"
+               data-19300="background-color: rgb(135,145,243,1);"
+               data-19900="background-color: rgb(135,145,243,0);"
+               href="#sixth"
+               data-menu-top="17300"
+               onmouseover="showNavLabel(this)" onmouseout="hideNavLabel(this)">
             <div class="label">Auswirkungen von Schadstoffen</div>
         </a></li>
-        <li><a id="6" onclick="setClickScrollPage(6)" onmouseover="showNavLabel(this)" onmouseout="hideNavLabel(this)">
+        <li><a id="6"
+               data-19400="background-color: rgb(135,145,243,0);"
+               data-19900="background-color: rgb(135,145,243,1);"
+               data-21900="background-color: rgb(135,145,243,1);"
+               data-22700="background-color: rgb(135,145,243,0);"
+               href="#seventh"
+               data-menu-top="19900"
+               onmouseover="showNavLabel(this)" onmouseout="hideNavLabel(this)">
             <div class="label">Unter der Lupe</div>
         </a></li>
-        <li><a id="7"  onclick="setClickScrollPage(7)" onmouseover="showNavLabel(this)" onmouseout="hideNavLabel(this)">
+        <li><a id="7"
+               data-19400="background-color: rgb(135,145,243,0);"
+               data-19900="background-color: rgb(135,145,243,1);"
+               data-21900="background-color: rgb(135,145,243,1);"
+               data-22700="background-color: rgb(135,145,243,0);"
+               href="#eighth"
+               data-menu-top="19900"
+               onmouseover="showNavLabel(this)" onmouseout="hideNavLabel(this)">
             <div class="label">Impressum</div>
         </a></li>
-        <li><a id="8"  onclick="setClickScrollPage(8)" onmouseover="showNavLabel(this)" onmouseout="hideNavLabel(this)">
+        <li><a id="8"
+               data-19400="background-color: rgb(135,145,243,0);"
+               data-19900="background-color: rgb(135,145,243,1);"
+               data-21900="background-color: rgb(135,145,243,1);"
+               data-22700="background-color: rgb(135,145,243,0);"
+               href="#ninth"
+               data-menu-top="19900"
+               onmouseover="showNavLabel(this)" onmouseout="hideNavLabel(this)">
             <div class="label">Quellen</div>
         </a></li>
     </ul>
 </div>
-
 
 
 <div id="content" >
@@ -555,9 +617,11 @@
     <!-- Include an run the necessary scripts -->
     <script src="js.js"></script>
     <script type="text/javascript" src="skrollr.min.js"></script>
-	<script type="text/javascript">
-	    skrollr.init();
-	</script>
+    <script type="text/javascript" src="skrollr.menu.min.js"></script>
+    <script type="text/javascript">
+        let s = skrollr.init();
+        skrollr.menu.init(s);
+    </script>
 
 </body>
 </html>
