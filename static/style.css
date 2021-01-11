@@ -138,10 +138,15 @@ body {
     height: 140px;
     width: 120px;
     border: none;
+    outline: none;
 }
 
 .icon_toggle_container button:hover {
     transform: translateY(-5px);
+}
+
+.icon_toggle_container button:focus {
+    outline: none;
 }
 
 .icon_toggle_container button img {
@@ -157,6 +162,7 @@ body {
     border-thickness: 10px;
     overflow: auto;
     padding: 20px;
+    border-radius: 12px;
 
 }
 
