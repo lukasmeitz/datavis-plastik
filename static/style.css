@@ -110,8 +110,6 @@ body {
     margin: 50px;
     margin-bottom: 0px;
     color: #FF6F42;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 200;
 }
 
 .side_text div {
@@ -161,7 +159,7 @@ body {
 .health_info_box p {
 
     color: white;
-    font-size: 16pt;
+    font-size: 14pt;
     margin: auto;
     text-align: left;
 
