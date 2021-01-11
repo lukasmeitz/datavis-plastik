@@ -140,6 +140,10 @@ body {
     border: none;
 }
 
+.icon_toggle_container button:hover {
+    transform: translateY(-5px);
+}
+
 .icon_toggle_container button img {
     margin: auto;
     height: 80%;

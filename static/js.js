@@ -234,6 +234,11 @@ function toggle_health(num_issue = -1) {
 
     var issues = ["bpa", "fsm", "pht", "hm"];
     var colors = ["#43323E", "#43323E", "#43323E", "43323E"];
+
+    var buttons = ["new_images/sixth/Bisphenol.png", "new_images/sixth/Flammschutzmittel.png",
+                "new_images/sixth/Phthalate.png","new_images/sixth/Schwermetalle.png"];
+    var buttons_aktiv = ["new_images/sixth/Bisphenol_aktiv.png", "new_images/sixth/Flammschutzmittel_aktiv.png",
+                "new_images/sixth/Phthalate_aktiv.png","new_images/sixth/Schwermetalle_aktiv.png"];
     console.log("issue is: " + issues[num_issue]);
 
     document.getElementById("health_info_box").style.backgroundColor = colors[num_issue];
@@ -245,11 +250,17 @@ function toggle_health(num_issue = -1) {
         var elem = document.getElementById(name);
 
         if(i == num_issue){
-            elem.classList.remove("passive");
-            elem.classList.add("active");
+
+            elem.childNodes[0].src = buttons_aktiv[i];
+
+            //elem.classList.remove("passive");
+            //elem.classList.add("active");
         } else {
-            elem.classList.remove("active");
-            elem.classList.add("passive");
+        
+            elem.childNodes[0].src = buttons[i];
+
+            //elem.classList.remove("active");
+            //elem.classList.add("passive");
         }
 
 
