@@ -132,6 +132,17 @@ function display_direct(num){
     var element = document.getElementById("direct_info");
     element.src = images[num];
 
+
+    for(var i = 0; i < 4; i++) {
+
+        var name = "direct_" + (i+1);
+        var elem = document.getElementById(name);
+        var name_extension = i == num ? "_aktiv.png" : ".png";
+
+        elem.src = "new_images/fourth/direkt_" + (i+1) + name_extension;
+
+    }
+
 }
 display_direct(0);
 
@@ -143,6 +154,17 @@ function display_indirect(num){
 
     var element = document.getElementById("indirect_info");
     element.src = images[num];
+
+
+    for(var i = 0; i < 3; i++) {
+
+        var name = "indirect_" + (i+1);
+        var elem = document.getElementById(name);
+        var name_extension = i == num ? "_aktiv.png" : ".png";
+
+        elem.src = "new_images/fourth/indirekt_" + (i+1) + name_extension;
+
+    }
 
 }
 display_indirect(0);
@@ -256,7 +278,7 @@ function toggle_health(num_issue = -1) {
             //elem.classList.remove("passive");
             //elem.classList.add("active");
         } else {
-        
+
             elem.childNodes[0].src = buttons[i];
 
             //elem.classList.remove("active");
