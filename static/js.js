@@ -294,15 +294,15 @@ function toggle_health(num_issue = -1) {
     }
 
 
-    var pictures = ["image/BPA_Koerper.png",
-    "image/Flammschutzmittel_Koerper.png",
-    "image/Phthalate_Koerper.png",
-    "image/Schwermetalle_Koerper.png"];
+    var pictures = ["new_images/sixth/Beschriftung_BPA.png",
+    "new_images/sixth/Beschriftung_Flammschutzmittel.png",
+    "new_images/sixth/Beschriftung_Phthalate.png",
+    "new_images/sixth/Beschriftung_Schwermetalle.png"];
 
-    var products = ["image/BPA_Icon_Übersicht.png",
-    "image/Flammschutzmittel_Icon_Übersicht.png",
-    "image/Phthalate_Icon_Übersicht.png",
-    "image/Schwermetalle_Icon_Übersicht.png"];
+    var products = ["new_images/sixth/Icons Bisphenol A.png",
+    "new_images/sixth/Icons Flammschutzmittel.png",
+    "new_images/sixth/Icons Phthalate.png",
+    "new_images/sixth/Icons Schwermetalle.png"];
 
     if(health_toggle_persistence){
         var picture = document.getElementById("health_issue_picture").src = pictures[num_issue];
