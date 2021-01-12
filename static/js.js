@@ -144,7 +144,6 @@ function display_direct(num){
     }
 
 }
-display_direct(0);
 
 function display_indirect(num){
 
@@ -167,7 +166,6 @@ function display_indirect(num){
     }
 
 }
-display_indirect(0);
 
 
 
@@ -183,7 +181,6 @@ function glassMagnifier() {
     glass.addEventListener("mousedown", function (e) {
         e.preventDefault();
         isGlassSelected = true;
-        console.log("mouse ist down!!!!!!");
     });
     glass.addEventListener("mousemove", moveMagnifier);
     ende_Screen.addEventListener("mousemove", moveMagnifier);
@@ -191,7 +188,6 @@ function glassMagnifier() {
     glass.addEventListener("mouseup", function (e) {
         e.preventDefault();
         isGlassSelected = false;
-        console.log("mouse ist up*******");
     });
 
     function moveMagnifier(event) {
@@ -204,7 +200,6 @@ function glassMagnifier() {
             pos = getCursorPos(event, ende_Screen);
             x = pos.x;
             y = pos.y;
-            console.log("is moved x= "+ x +" y= "+ y);
 
             /*prevent the magnifier glass from being positioned outside the image:*/
             if (x > ende_Screen.width - (w / 3)) {x = ende_Screen.width - (w / 3);}
@@ -212,8 +207,8 @@ function glassMagnifier() {
             if (y > ende_Screen.height - (h / 3)) {y = ende_Screen.height - (h / 3);}
             if (y < h/4) {y = h / 4;}
             /*set the position of the magnifier glass:*/
-            glass_img.style.left = ((x - w)-50) + "px";
-            glass_img.style.top = ((y - h)-50) + "px";
+            glass_img.style.left = ((x - w)-100) + "px";
+            glass_img.style.top = ((y - h)-90) + "px";
             //cir_red.style.left = x + "px";
             //cir_red.style.top = y+ "px";
             particle_clipping(pos, particle_image);
@@ -233,8 +228,8 @@ function glassMagnifier() {
         return {x : x, y : y};
     }
     function particle_clipping(event,particle_image){
-        var x = event.x-105;
-        var y = event.y-145;
+        var x = event.x-140;
+        var y = event.y-115;
         particle_image.style = "clip-path: circle(130px at "+x+"px "+y+"px);";
 
     }
@@ -268,7 +263,6 @@ function toggle_health(num_issue = -1) {
     for(var i = 0; i < issues.length; i++) {
 
         var name = issues[i] + "_button_health";
-        console.log(name);
         var elem = document.getElementById(name);
 
         if(i == num_issue){
@@ -324,72 +318,12 @@ function toggle_health_products(){
     togglebutton.src = !health_toggle_persistence ? "new_images/sixth/Button_Auswirkungen.png" : "new_images/sixth/Button_Produkte.png";
 
     health_toggle_persistence = !health_toggle_persistence;
-    console.log("toggle dis, son");
     toggle_health();
 
 }
 
+// initialize
+display_direct(0);
+display_indirect(0);
 toggle_health(0);
-
-
-
-/* make the slideshow */
-function make_slides_from_data() {
-
-    // these are our resources
-    var background = "Background.png";
-
-    // these are our parameters
-    var w = window.innerWidth;
-    var h = window.innerHeight;
-
-    // we start by preparing our scroll boxes, one for each moving layer
-    var background_box = document.getElementById('background_box');
-    var bubble_box = document.getElementById('bubble_box');
-    var image_box = document.getElementById('image_box');
-    var text_box = document.getElementById('text_box');
-
-    // set the background
-    var background = document.createElement("div");
-    background.style.backgroundImage = "url('image/Bubble_Schicht_1.png')";
-    background.style.width = w + 'px';
-    background.style.height =  (1 / (3840 / w)) * 15120 + 'px';
-    //background_box.appendChild(background);
-
-    var bubble = document.createElement("div");
-    bubble.style.backgroundImage = "url('image/Bubble_Schicht_2.png')";
-    bubble.style.width = w + 'px';
-    bubble.style.height =  24147/2 + 'px';
-    //bubble_box.appendChild(bubble);
-
-    // id list
-    var ids = ["plastikkugel", "mensch", "groessen", "insel",
-    "over_image", "auswirkungen_1", "objekte", "impressum", "quellen"];
-
-    // loop through our prepared data to generate a slideshow
-    var i;
-
-    for(i = 0; i < ids.length; i++){
-
-        // scale the image´s parent div
-        var slide_field = document.getElementById(ids[i]);
-        console.log("slide_field "+ ids.length);
-        slide_field.style.width = w + 'px';
-        slide_field.style.height = h + 'px';
-
-        // scale the text and its parent div
-        var text_field = document.getElementById(ids[i] + "_text");
-        text_field.style.width = w + 'px';
-        if( i == 0) {
-            text_field.style.height = (h * 1.0) + 'px';
-        } else {
-            text_field.style.height = (h * 1.0) + 'px';
-        }
-
-    }
-
-}
-
-
-//make_slides_from_data();
 glassMagnifier();
