@@ -38,6 +38,7 @@
 
 #first_infobutton {
     border: none;
+    position: absolute;
     background-image: url("new_images/first/Info_Button.png");
     background-size: 100%;
 }

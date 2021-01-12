@@ -1,7 +1,8 @@
 
 @font face {
-    font-family: "junegull";
-    src: url("Junegull_400.ttf");
+    font-family: 'junegull_400';
+    src:
+    url("http://lukasmeitz.duckdns.org/static/Junegull_400.ttf");
 }
 
 
@@ -284,7 +285,6 @@ body {
 }
 
 .quell {
-    margin: auto;
     width: 80%;
     height: 70%;
 }
