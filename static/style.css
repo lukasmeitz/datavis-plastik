@@ -262,6 +262,7 @@ body {
     background-color:  #8791F3;
     text-decoration: none;
 }
+
 .label {
     position: relative;
     top: -60%;
@@ -271,7 +272,7 @@ body {
     font-size: 1em;
     color: rgb(0, 0, 0);
     display: none;
-    font-family: 'Roboto';
+    font-family: 'Poppins', sans-serif;
     font-weight: 400;
 }
 
@@ -280,9 +281,10 @@ body {
     width: 80%;
     height: 70%;
 }
+
 .quell li{
-    font-family: 'Roboto';
+    font-family: 'Poppins', sans-serif;
     font-size: 10pt;
-    color: white;
+    color: #8791F3;
     padding-bottom: 15px;
 }
