@@ -243,6 +243,9 @@ var health_toggle_persistence = true;
 
 function toggle_health(num_issue = -1) {
 
+
+    // handle the persistence thing
+    // if no number is provided, use the one that has been saved last time
     if(num_issue == -1){
         num_issue = num_issue_persistence;
     } else {
@@ -252,31 +255,32 @@ function toggle_health(num_issue = -1) {
     var issues = ["bpa", "fsm", "pht", "hm"];
     var colors = ["#43323E", "#43323E", "#43323E", "43323E"];
 
-    var buttons = ["new_images/sixth/Bisphenol.png", "new_images/sixth/Flammschutzmittel.png",
-                "new_images/sixth/Phthalate.png","new_images/sixth/Schwermetalle.png"];
-    var buttons_aktiv = ["new_images/sixth/Bisphenol_aktiv.png", "new_images/sixth/Flammschutzmittel_aktiv.png",
-                "new_images/sixth/Phthalate_aktiv.png","new_images/sixth/Schwermetalle_aktiv.png"];
-    console.log("issue is: " + issues[num_issue]);
+    var buttons = ["new_images/sixth/Bisphenol.png",
+                    "new_images/sixth/Flammschutzmittel.png",
+                    "new_images/sixth/Phthalate.png",
+                    "new_images/sixth/Schwermetalle.png"];
 
+    var buttons_aktiv = ["new_images/sixth/Bisphenol_aktiv.png",
+                    "new_images/sixth/Flammschutzmittel_aktiv.png",
+                    "new_images/sixth/Phthalate_aktiv.png",
+                    "new_images/sixth/Schwermetalle_aktiv.png"];
+
+    // not used any more: this was part of changing the textbox background
+    console.log("issue is: " + issues[num_issue]);
     document.getElementById("health_info_box").style.backgroundColor = colors[num_issue];
 
+    // loop over all four available chemical buttons and change the active/passive state
     for(var i = 0; i < issues.length; i++) {
 
         var name = issues[i] + "_button_health";
         var elem = document.getElementById(name);
 
         if(i == num_issue){
-
+            // case true: this is the button that was pressed
             elem.childNodes[0].src = buttons_aktiv[i];
-
-            //elem.classList.remove("passive");
-            //elem.classList.add("active");
         } else {
-
+            // case false: this is a button that is passive, but has probably been active before. re-render to be sure
             elem.childNodes[0].src = buttons[i];
-
-            //elem.classList.remove("active");
-            //elem.classList.add("passive");
         }
 
 
@@ -294,6 +298,7 @@ function toggle_health(num_issue = -1) {
     }
 
 
+    // these are hardcoded paths to the image sources
     var pictures = ["new_images/sixth/Beschriftung_BPA.png",
     "new_images/sixth/Beschriftung_Flammschutzmittel.png",
     "new_images/sixth/Beschriftung_Phthalate.png",
@@ -304,11 +309,22 @@ function toggle_health(num_issue = -1) {
     "new_images/sixth/Icons Phthalate.png",
     "new_images/sixth/Icons Schwermetalle.png"];
 
+    var labels = ["new_images/sixth/Box_BPA_Kunststoffarten.png",
+    "new_images/sixth/Box_Flammschutzmittel.png",
+    "new_images/sixth/Box_Phthalate.png",
+    "new_images/sixth/Box_Schwermetalle.png"];
+
+
     if(health_toggle_persistence){
-        var picture = document.getElementById("health_issue_picture").src = pictures[num_issue];
+        // case 1: we want to see the persons and health issues
+        document.getElementById("health_issue_picture").src = pictures[num_issue];
     } else {
-        var picture = document.getElementById("health_issue_picture").src = products[num_issue];
+        //case two: we want to see the products
+        document.getElementById("health_issue_picture").src = products[num_issue];
     }
+
+    // in any case: we want to show the correct info label on the top right corner
+        document.getElementById("health_label").src = labels[num_issue];
 
 }
 
@@ -317,7 +333,11 @@ function toggle_health_products(){
     var togglebutton = document.getElementById("health_toggle");
     togglebutton.src = !health_toggle_persistence ? "new_images/sixth/Button_Auswirkungen.png" : "new_images/sixth/Button_Produkte.png";
 
+    // here the toggle logic is set
     health_toggle_persistence = !health_toggle_persistence;
+
+    // toggle_health is called by the buttons to change the shown content
+    // in this case, we just want to reload the page because product view has been toggled
     toggle_health();
 
 }
