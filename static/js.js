@@ -350,7 +350,7 @@ function toggle_contact(num_issue) {
 
     var buttons = ["new_images/fifth/Atmung.png",
                    "new_images/fifth/Verzehr.png",
-                   "new_images/fifth/hautkontakt.png"];
+                   "new_images/fifth/Hautkontakt.png"];
 
     var buttons_aktiv = ["new_images/fifth/Atmung_ausgewählt.png",
                     "new_images/fifth/Verzehr_ausgewählt.png",
