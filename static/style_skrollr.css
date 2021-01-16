@@ -196,3 +196,48 @@
     50% { transform: translateY(10px)}
     100% { transform: translateY(0px)}
 }
+
+
+
+#contact_container_span {
+
+    position: absolute;
+    top: 16.1%;
+    left: 53%;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    width: 38%;
+    height: 20%;
+}
+
+#contact_container_span button{
+    border: none;
+    outline: none;
+    margin: 0;
+}
+
+#contact_container_span button:hover {
+    transform: translateY(-5px);
+}
+
+#contact_container_span button img {
+    margin: auto;
+    height: 100%;
+}
+
+.icon_toggle_container button {
+}
+
+.icon_toggle_container button:hover {
+    transform: translateY(-5px);
+}
+
+.icon_toggle_container button:focus {
+    outline: none;
+}
+
+.icon_toggle_container button img {
+    margin: auto;
+    height: 80%;
+}

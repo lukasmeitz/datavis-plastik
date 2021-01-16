@@ -342,8 +342,62 @@ function toggle_health_products(){
 
 }
 
+
+
+function toggle_contact(num_issue) {
+
+    var issues = ["atmung", "verzehr", "hautkontakt"];
+
+    var buttons = ["new_images/fifth/Atmung.png",
+                   "new_images/fifth/Verzehr.png",
+                   "new_images/fifth/hautkontakt.png"];
+
+    var buttons_aktiv = ["new_images/fifth/Atmung_ausgewählt.png",
+                    "new_images/fifth/Verzehr_ausgewählt.png",
+                    "new_images/fifth/Hautkontakt_ausgewählt.png"];
+
+
+    var descriptions = ["new_images/fifth/Atmung_beschreibung.png",
+                    "new_images/fifth/Verzehr_beschreibung.png",
+                    "new_images/fifth/Hautkontakt_beschreibung.png"];
+
+    var icons = ["new_images/fifth/Icons_Atmen.png",
+                    "new_images/fifth/Icons_Verzehr.png",
+                    "new_images/fifth/Icons_Hautkontakt.png"];
+
+
+    // loop over all four available chemical buttons and change the active/passive state
+    for(var i = 0; i < issues.length; i++) {
+
+        var name = issues[i] + "_contact";
+        var elem = document.getElementById(name);
+
+        if(i == num_issue){
+            // case true: this is the button that was pressed
+            elem.childNodes[1].src = buttons_aktiv[i];
+            console.log(elem.childNodes);
+        } else {
+            // case false: this is a button that is passive, but has probably been active before. re-render to be sure
+            elem.childNodes[1].src = buttons[i];
+        }
+
+    }
+
+
+    document.getElementById("contact_description").src = descriptions[num_issue];
+
+    document.getElementById("contact_icons").src = icons[num_issue];
+
+
+
+}
+
+
+
+
 // initialize
 display_direct(0);
 display_indirect(0);
 toggle_health(0);
+toggle_contact(0);
 glassMagnifier();
