@@ -135,7 +135,7 @@ body {
 
 
 .icon_toggle_container {
-    width:100%;
+    width:80%;
     margin: 2% auto;
     display: flex;
     flex-flow: row;
@@ -144,7 +144,7 @@ body {
 .icon_toggle_container button {
     margin: auto;
     height: 140px;
-    width: 120px;
+    width: 110px;
     border: none;
     outline: none;
 }
@@ -159,18 +159,21 @@ body {
 
 .icon_toggle_container button img {
     margin: auto;
-    height: 80%;
+    height: 90%;
 }
 
 .health_info_box {
 
     background-color: #ad4d2f;
     height: 42%;
-    margin: 6% 15%;
+    width: 65%;
+    margin: 6% auto;
     border-thickness: 10px;
     overflow: auto;
     padding: 30px;
     border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
 
 }
 
