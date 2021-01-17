@@ -143,7 +143,7 @@ body {
 
 .icon_toggle_container button {
     margin: auto;
-    height: 140px;
+    height: 190px;
     width: 110px;
     border: none;
     outline: none;
@@ -159,13 +159,13 @@ body {
 
 .icon_toggle_container button img {
     margin: auto;
-    height: 90%;
+    height: 100%;
 }
 
 .health_info_box {
 
     background-color: #ad4d2f;
-    height: 42%;
+    height: 38.6%;
     width: 65%;
     margin: 6% auto;
     border-thickness: 10px;
