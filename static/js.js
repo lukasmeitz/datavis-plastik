@@ -175,6 +175,7 @@ function glassMagnifier() {
     var isGlassSelected = false;
     var glass = document.getElementById("glass");
     var glass_img = document.getElementById("magnifier-glass");
+    var text_img = document.getElementById("magnifier-text");
     var ende_Screen = document.getElementById("objekte");
     var particle_image = document.getElementById("particle_image");
 
@@ -192,28 +193,43 @@ function glassMagnifier() {
 
     function moveMagnifier(event) {
         let pos, x, y;
-        let w = glass_img.offsetWidth / 2;
-        let h = glass_img.offsetHeight / 2;
         event.preventDefault();
 
         if(isGlassSelected){
             pos = getCursorPos(event, ende_Screen);
+
             x = pos.x;
             y = pos.y;
 
-            /*prevent the magnifier glass from being positioned outside the image:*/
-            if (x > ende_Screen.width - (w / 3)) {x = ende_Screen.width - (w / 3);}
-            if (x < w / 4) {x = w / 4;}
-            if (y > ende_Screen.height - (h / 3)) {y = ende_Screen.height - (h / 3);}
-            if (y < h/4) {y = h / 4;}
-            /*set the position of the magnifier glass:*/
-            glass_img.style.left = ((x - w)-100) + "px";
-            glass_img.style.top = ((y - h)-90) + "px";
-            //cir_red.style.left = x + "px";
-            //cir_red.style.top = y+ "px";
-            particle_clipping(pos, particle_image);
+            moveMagnifier_for_real_now(x, y);
         }
     }
+
+    function moveMagnifier_for_real_now(x, y) {
+
+        let w = glass_img.offsetWidth / 2;
+        let h = glass_img.offsetHeight / 2;
+
+        /*prevent the magnifier glass from being positioned outside the image:*/
+        if (x > ende_Screen.width - (w / 3)) {x = ende_Screen.width - (w / 3);}
+        if (x < w / 4) {x = w / 4;}
+        if (y > ende_Screen.height - (h / 3)) {y = ende_Screen.height - (h / 3);}
+        if (y < h/4) {y = h / 4;}
+
+        /*set the position of the magnifier glass:*/
+        glass_img.style.left = ((x - w)-100) + "px";
+        glass_img.style.top = ((y - h)-90) + "px";
+
+        /* set the position of the text to follow the glass */
+        text_img.style.left = (x-180) + "px";
+        text_img.style.top = (y-420) + "px";
+
+        //cir_red.style.left = x + "px";
+        //cir_red.style.top = y+ "px";
+        particle_clipping(x, y, particle_image);
+
+    }
+
     function getCursorPos(e,img) {
         let a, x = 0, y = 0;
         e = e || window.event;
@@ -227,12 +243,16 @@ function glassMagnifier() {
         y = y - window.pageYOffset;
         return {x : x, y : y};
     }
-    function particle_clipping(event,particle_image){
-        var x = event.x-140;
-        var y = event.y-115;
-        particle_image.style = "clip-path: circle(130px at "+x+"px "+y+"px);";
+
+    function particle_clipping(x_1, y_1, particle_image){
+        var x = x_1-140;
+        var y = y_1+15;
+        particle_image.style =  "position: absolute; bottom: 0; width: 100%; clip-path: circle(130px at "+x+"px "+y+"px);";
 
     }
+
+    moveMagnifier_for_real_now(900, 500);
+
 }
 
 
@@ -401,3 +421,5 @@ display_indirect(0);
 toggle_health(0);
 toggle_contact(0);
 glassMagnifier();
+
+
