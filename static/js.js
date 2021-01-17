@@ -393,13 +393,22 @@ function toggle_contact(num_issue) {
         var name = issues[i] + "_contact";
         var elem = document.getElementById(name);
 
+        var anim = document.getElementById("animation_" + i);
+
         if(i == num_issue){
             // case true: this is the button that was pressed
             elem.childNodes[1].src = buttons_aktiv[i];
             console.log(elem.childNodes);
+
+            anim.classList.remove("hide");
+            anim.classList.add("show");
+
         } else {
             // case false: this is a button that is passive, but has probably been active before. re-render to be sure
             elem.childNodes[1].src = buttons[i];
+
+            anim.classList.remove("show");
+            anim.classList.add("hide");
         }
 
     }
