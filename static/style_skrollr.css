@@ -139,18 +139,6 @@
 
 
 
-#sixth * {
-    position: relative;
-}
-
-#sixth {
-
-    display: flex;
-    flex-flow: row;
-
-}
-
-
 #eigth p {
    color: #8791F3;
 }

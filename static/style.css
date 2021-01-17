@@ -135,6 +135,9 @@ body {
 
 
 .icon_toggle_container {
+    position: absolute;
+    left: 12.5%;
+    top: 29%;
     width:80%;
     margin: 2% auto;
     display: flex;
@@ -164,14 +167,19 @@ body {
 
 .health_info_box {
 
-    background-color: #ad4d2f;
-    height: 38.6%;
+    position: absolute;
+    height: 32.6%;
     width: 65%;
-    margin: 6% auto;
-    border-thickness: 10px;
+    left: 14%;
+    bottom: 6%;
+
+    background-color: #ad4d2f;
     overflow: auto;
+
     padding: 30px;
     border-radius: 8px;
+    border-thickness: 10px;
+
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
 
@@ -180,7 +188,7 @@ body {
 .health_info_box p {
 
     color: #b3ccff;
-    font-size: 14pt;
+    font-size: 12pt;
     margin: auto;
     text-align: left;
 
