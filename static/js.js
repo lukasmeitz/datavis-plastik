@@ -201,6 +201,7 @@ function glassMagnifier() {
             x = pos.x;
             y = pos.y;
 
+
             moveMagnifier_for_real_now(x, y);
         }
     }
@@ -251,7 +252,7 @@ function glassMagnifier() {
 
     }
 
-    moveMagnifier_for_real_now(900, 500);
+    moveMagnifier_for_real_now(760, 560);
 
 }
 
