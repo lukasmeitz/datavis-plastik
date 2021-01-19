@@ -269,6 +269,7 @@ body {
 
     text-decoration: none;
     cursor: pointer;
+    outline: 0;
 }
 
 .vNav a:hover{

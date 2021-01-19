@@ -247,7 +247,7 @@ function glassMagnifier() {
 
     function particle_clipping(x_1, y_1, particle_image){
         var x = x_1-140;
-        var y = y_1+15;
+        var y = y_1-30;
         particle_image.style =  "position: absolute; bottom: 0; width: 100%; clip-path: circle(130px at "+x+"px "+y+"px);";
 
     }
