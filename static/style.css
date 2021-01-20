@@ -190,6 +190,8 @@ body {
     font-size: 12pt;
     margin: auto;
     text-align: left;
+    word-wrap: break-word;
+
 
 }
 
