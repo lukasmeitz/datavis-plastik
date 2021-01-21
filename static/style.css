@@ -217,6 +217,21 @@ body {
 }
 
 
+#ninth {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12pt;
+    line-height: 1.1;
+}
+
+#tenth {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12pt;
+    line-height: 1.1;
+}
+
+.heading {
+    font-weight: bold;
+}
 
 
 .background_box {
