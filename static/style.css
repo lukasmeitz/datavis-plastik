@@ -233,6 +233,9 @@ body {
     font-weight: bold;
 }
 
+b {
+    font-weight: 600;
+}
 
 .background_box {
     width: 100%;
