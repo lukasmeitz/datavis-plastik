@@ -274,7 +274,7 @@ function toggle_health(num_issue = -1) {
     }
 
     var issues = ["bpa", "fsm", "pht", "hm"];
-    var colors = ["#43323E", "#43323E", "#43323E", "43323E"];
+    var colors = ["#373450", "#373450", "#373450", "#373450"];
 
     var buttons = ["new_images/sixth/Bisphenol.png",
                     "new_images/sixth/Flammschutzmittel.png",
