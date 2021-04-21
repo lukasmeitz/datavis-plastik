@@ -3,6 +3,10 @@
 //document.body.style.overflow = 'hidden';
 
 var scroll_lock = false;
+var language = "en";
+
+var indirect_num = 0;
+var direct_num = 0;
 
 
 /* handle the scrolling stuffs */
@@ -20,6 +24,31 @@ window.addEventListener('wheel', function(event)
     //scrolling(event.deltaY);
 
 });
+
+
+function toggle_language() {
+
+    elements = document.getElementsByClassName(language);
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].style.display = "none";
+    }
+
+    if(language == "de") {
+        language = "en";
+    } else {
+        language = "de";
+    }
+
+    elements = document.getElementsByClassName(language);
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].style.display = "block";
+    }
+
+    display_direct()
+    display_indirect()
+
+}
+
 
 function scrolling(deltaY, locking=true) {
 
@@ -122,12 +151,26 @@ function setClickScrollPage(page_number) {
 
 
 /* handle the indirect/direct contact info screen */
-function display_direct(num){
+function display_direct(num = -1){
 
-    var images = ["new_images/fourth/1.Kasten.png",
-        "new_images/fourth/2.Kasten.png",
-        "new_images/fourth/3.Kasten.png",
-        "new_images/fourth/4.Kasten.png"];
+    if(num == -1) {
+        num = direct_num
+    } else {
+        direct_num = num
+    }
+
+    if(language == "de") {
+       var images = ["new_images/fourth/1.Kasten.png",
+            "new_images/fourth/2.Kasten.png",
+            "new_images/fourth/3.Kasten.png",
+            "new_images/fourth/4.Kasten.png"];
+
+    } else {
+       var images = ["new_images/fourth/1.Kasten_Englisch.png",
+            "new_images/fourth/2.Kasten_Englisch.png",
+            "new_images/fourth/3.Kasten_Englisch.png",
+            "new_images/fourth/4.Kasten_Englisch.png"];
+    }
 
     var element = document.getElementById("direct_info");
     element.src = images[num];
@@ -145,11 +188,24 @@ function display_direct(num){
 
 }
 
-function display_indirect(num){
+function display_indirect(num = -1){
 
-    var images = ["new_images/fourth/6.Kasten.png",
-        "new_images/fourth/7.Kasten.png",
-        "new_images/fourth/5.Kasten.png"];
+    if(num == -1) {
+        num = indirect_num
+    } else {
+        indirect_num = num
+    }
+
+    if(language == "de") {
+        var images = ["new_images/fourth/6.Kasten.png",
+            "new_images/fourth/7.Kasten.png",
+            "new_images/fourth/5.Kasten.png"];
+    } else {
+        var images = ["new_images/fourth/6.Kasten_Englisch.png",
+            "new_images/fourth/7.Kasten_Englisch.png",
+            "new_images/fourth/5.Kasten_Englisch.png"];
+    }
+
 
     var element = document.getElementById("indirect_info");
     element.src = images[num];
@@ -426,6 +482,7 @@ function toggle_contact(num_issue) {
 
 
 // initialize
+toggle_language();
 display_direct(0);
 display_indirect(0);
 toggle_health(0);

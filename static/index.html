@@ -18,6 +18,10 @@
 <!--This is a Div to create a Dot Schrollbar! -->
 
 <div class="vNav">
+    <button id="toggle_button_language" onclick="toggle_language()"
+    style="top:5.5%; right:8.4%; width:4%; height: 3%; z-index: 99;">Lang
+    </button>
+
     <ul class="vNav">
         <li >
             <a id="0"
@@ -160,15 +164,25 @@
              data-1300="left: 100%;">
 
 
-        <img src="new_images/first/Überschrift.png"
-             style="top:16.4%; left:9%; width:45%;">
+        <img class="de" src="new_images/first/Überschrift_de.png"
+             style="top:16.4%; left:9%; height:29%;">
 
-        <p id="first_subtitle"
+        <img class="en" src="new_images/first/Überschrift_en.png"
+             style="top:16.4%; left:9%; height:29%; display: none;">
+
+
+
+        <p class="first_subtitle de"
            style="top:49%; left:9%; width:25%;">Ohne Frage leben wir in einer Welt, umgeben von Plastik. Wer genauer hinsieht, stellt fest, dass das Plastik nicht nur unsere komplette Umwelt durchdrungen hat, sondern auch unsere Körper.</p>
 
+        <p class="first_subtitle en"
+           style="top:49%; left:9%; width:25%;">We live in a world surrounded by plastic. If you take a closer look, you will see that plastic has not only permeated our entire environment, but also our bodies.</p>
 
 
-        <img id="first_scroll_button" src="new_images/first/Scroll-Button_mit Text.png"
+
+        <img class="first_scroll_button de" src="new_images/first/Scroll-Button_mit Text.png"
+             style="bottom:15%; left:46.5%; width:7%;">
+        <img class="first_scroll_button en" src="new_images/first/Scroll-Button_Englisch.png"
              style="bottom:15%; left:46.5%; width:7%;">
 
 
@@ -176,13 +190,10 @@
             style="top:5.5%; right:3.4%; width:4%; height: 3%;"
                href="#eighth"
                data-menu-top="23900">
-
         </a>
 
         <img src="new_images/first/Logo.png"
              style="top:5.5%; left:3.4%; width:3%;">
-
-
 
     </div>
 
@@ -190,24 +201,35 @@
     <div id="second"
          data-1300="top: 100%;"
          data-1900="top: 0%;"
-         data-4900="top:0%;"
+         data-4900="top: 0%;"
          data-5500="top: -100%;">
 
 
-        <img src="new_images/second/Textkasten Screen 2.png"
-             style="left: 6.7%; top: 8%; width:16.6%;">
+        <img src="new_images/second/Frage_screen2.png" class="de"
+             style="left: 6.7%; top: 8%; height:20%;">
+        <img src="new_images/second/Frage_screen2_Englisch.png" class="en"
+             style="left: 6.7%; top: 8%; height:20%; display:none;">
+
+
+
+        <p class="first_subtitle de"
+           style="top:30%; left:6.7%; width:15%;">Es sind Chemikalien und kleine Plastikteilchen, die sich negativ auf unseren Körper auswirken.</p>
+
+        <p class="first_subtitle en"
+           style="top:30%; left:6.7%; width:15%;">It is chemicals and small plastic particles that have a negative impact on our bodies.</p>
+
+
+
 
         <img src="new_images/second/Chemikalie_Ohne_Punkte.png"
              style="bottom:20%; height:37.7%;"
              data-1900="left: -100%;"
              data-2900="left: 24%;">
 
-
          <img src="new_images/second/Chemikalie_Animation_Punkte.gif"
               style="height: 68.3%;  top: 11.5%;"
               data-1900="left: -100%;"
               data-2900="left: 24.1%;">
-
 
         <img src="new_images/second/Mikroplastik_ohne_Punkte.png"
              style="bottom:20%; height:22.1%;"
@@ -225,8 +247,13 @@
 
 
         <img src="new_images/second/Sprechblase.png"
-             class="wiggle"
+             class="wiggle de"
              style="top:11.7%; right: 29%; width:15%;"
+                data-2900="opacity: 0;"
+                data-3900="opacity: 1;">
+        <img src="new_images/second/Sprechblase_Englisch.png"
+             class="wiggle en"
+             style="top:11.7%; right: 29%; width:15%; display: none;"
                 data-2900="opacity: 0;"
                 data-3900="opacity: 1;">
 
@@ -246,16 +273,25 @@
                 data-9000="opacity: 1;"
                 data-9500="opacity: 0;">
 
-        <img src="new_images/third/Textkasten_Screen_3.png"
+        <img src="new_images/third/Textkasten_Screen_3.png" class="de"
              style="top:12.4%; left: 9.2%; height:17.7%;">
+        <img src="new_images/third/Text_Screen 3_Englisch.png" class="en"
+             style="top:12.4%; left: 9.2%; height:17.7%; display: none;">
+
 
 
         <img src="new_images/third/Nicht vergrößerte Teilchen.png"
              class="wiggle"
              style="top:11.4%; left: 9.7%; height:79.8%; animation-delay: 0.5s;">
 
-        <img src="new_images/third/Beschriftung_Nicht vergrößerte Teilchen.png"
+
+        <img src="new_images/third/Beschriftung_Nicht vergrößerte Teilchen.png" class="de"
              style="top:11.4%; left: 10%; height:79.8%;">
+
+        <img src="new_images/third/Nicht vergrößerte Teilchen_Englisch.png" class="en"
+             style="top:11.4%; left: 10%; height:79.8%; display: none;">
+
+
 
         <img src="new_images/third/Vergrößerte Teilchen.png"
              class="wiggle"
@@ -263,11 +299,15 @@
              data-6500="opacity: 0;"
              data-7500="opacity: 1;">
 
-        <img src="new_images/third/Beschriftung_Vergrößerte Teilchen.png"
+
+        <img src="new_images/third/Beschriftung_Vergrößerte Teilchen.png" class="de"
              style="left: 19.8%; height:24.7%; animation-delay: 0.12s;"
              data-7500="top:100%;"
              data-8500="top:64.7%;">
-
+        <img src="new_images/third/Beschriftung_Vergrößerte Teilchen_Englisch.png" class="en"
+             style="left: 19.8%; height:24.7%; animation-delay: 0.12s; display: none;"
+             data-7500="top:100%;"
+             data-8500="top:64.7%;">
 
 
     </div>
@@ -283,21 +323,31 @@
         <img src="new_images/fourth/Weltkugel.png"
              style="top:26%; right: 34.1%; height:65%;">
 
-        <img src="new_images/fourth/Text_Direkter_Kontakt.png"
+        <img src="new_images/fourth/Text_Direkter_Kontakt.png" class="de"
              style="top: 12%; left: 24.5%; height:12.1%;">
+        <img src="new_images/fourth/Text_Direkter_Kontakt_Englisch.png" class="en"
+             style="top: 12%; left: 24.5%; height:12.1%; display: none;">
 
-        <img src="new_images/fourth/Text_Indirekter_kontakt.png"
+
+        <img src="new_images/fourth/Text_Indirekter_kontakt.png" class="de"
              style="right: 22.9%; top: 12%; height:12.1%;">
+        <img src="new_images/fourth/Text_Indirekter_kontakt_Englisch.png" class="en"
+             style="right: 22.9%; top: 12%; height:12.1%; display:none;">
 
 
 
-        <img src="new_images/fourth/Text_mit_Pfeil.png"
+        <img src="new_images/fourth/Text_mit_Pfeil.png" class="de"
              style="right: 17.7%; top: 33.2%; height:6.5%;"
              data-13100="opacity: 0;"
              data-13400="opacity: 1;"
              data-14000="opacity: 1;"
              data-14300="opacity: 0;">
-
+        <img src="new_images/fourth/Text mit pfeil_Englisch.png" class="en"
+             style="right: 17.7%; top: 33.2%; height:6.5%; display:none;"
+             data-13100="opacity: 0;"
+             data-13400="opacity: 1;"
+             data-14000="opacity: 1;"
+             data-14300="opacity: 0;">
 
 
         <img id="direct_info"
@@ -312,8 +362,10 @@
              data-12100="opacity: 0;"
              data-13100="opacity: 1;">
 
-        <img style="bottom: 5.5%; left: 7.5%; width: 16.1%;"
+        <img style="bottom: 5.5%; left: 7.5%; width: 16.1%;" class="de"
              src="new_images/fourth/Legende.png">
+        <img style="bottom: 5.5%; left: 7.5%; width: 16.1%; display: none;" class="en"
+             src="new_images/fourth/Legende_Englisch.png">
 
         <img src="new_images/fourth/Wolken links.png"
              class="wiggle"
