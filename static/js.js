@@ -7,6 +7,7 @@ var language = "en";
 
 var indirect_num = 0;
 var direct_num = 0;
+var num_contact = 0;
 
 
 /* handle the scrolling stuffs */
@@ -44,9 +45,11 @@ function toggle_language() {
         elements[i].style.display = "block";
     }
 
-    display_direct()
-    display_indirect()
-
+    display_direct();
+    display_indirect();
+    toggle_contact();
+    toggle_health_products(1);
+    //toggle_health();
 }
 
 
@@ -332,15 +335,27 @@ function toggle_health(num_issue = -1) {
     var issues = ["bpa", "fsm", "pht", "hm"];
     var colors = ["#373450", "#373450", "#373450", "#373450"];
 
-    var buttons = ["new_images/sixth/Bisphenol.png",
-                    "new_images/sixth/Flammschutzmittel.png",
-                    "new_images/sixth/Phthalate.png",
-                    "new_images/sixth/Schwermetalle.png"];
+    if(language == "de"){
+        var buttons = ["new_images/sixth/Bisphenol.png",
+                        "new_images/sixth/Flammschutzmittel.png",
+                        "new_images/sixth/Phthalate.png",
+                        "new_images/sixth/Schwermetalle.png"];
 
-    var buttons_aktiv = ["new_images/sixth/Bisphenol_aktiv.png",
-                    "new_images/sixth/Flammschutzmittel_aktiv.png",
-                    "new_images/sixth/Phthalate_aktiv.png",
-                    "new_images/sixth/Schwermetalle_aktiv.png"];
+        var buttons_aktiv = ["new_images/sixth/Bisphenol_aktiv.png",
+                        "new_images/sixth/Flammschutzmittel_aktiv.png",
+                        "new_images/sixth/Phthalate_aktiv.png",
+                        "new_images/sixth/Schwermetalle_aktiv.png"];
+    } else {
+        var buttons = ["new_images/sixth/Bisphenol_Englisch.png",
+                        "new_images/sixth/Flammschutzmittel_Englisch.png",
+                        "new_images/sixth/Phthalate_Englisch.png",
+                        "new_images/sixth/Schwermetalle_Englisch.png"];
+
+        var buttons_aktiv = ["new_images/sixth/Bisphenol_aktiv_Englisch.png",
+                        "new_images/sixth/Flammschutzmittel_aktiv_Englisch.png",
+                        "new_images/sixth/Phthalate_aktiv_Englisch.png",
+                        "new_images/sixth/Schwermetalle_aktiv_Englisch.png"];
+    }
 
     // not used any more: this was part of changing the textbox background
     console.log("issue is: " + issues[num_issue]);
@@ -363,33 +378,65 @@ function toggle_health(num_issue = -1) {
 
         var desc = issues[i] + "_description";
         var element = document.getElementById(desc);
+        var element_en = document.getElementById(desc + "_en");
+
         element.parentElement.scrollTop = 0;
+        //element_en.parentElement.scrollTop = 0;
+
         if(i == num_issue){
-            element.classList.remove("hide");
-            element.classList.add("show");
+            if(language == "de"){
+                element.classList.remove("hide");
+                element.classList.add("show");
+                element_en.classList.remove("show");
+            element_en.classList.add("hide");
+            } else {
+                element.classList.remove("show");
+                element.classList.add("hide");
+                element_en.classList.remove("hide");
+                element_en.classList.add("show");
+            }
         } else {
             element.classList.remove("show");
             element.classList.add("hide");
+            element_en.classList.remove("show");
+            element_en.classList.add("hide");
         }
 
     }
 
 
     // these are hardcoded paths to the image sources
-    var pictures = ["new_images/sixth/Beschriftung_BPA.png",
-    "new_images/sixth/Beschriftung_Flammschutzmittel.png",
-    "new_images/sixth/Beschriftung_Phthalate.png",
-    "new_images/sixth/Beschriftung_Schwermetalle.png"];
+    if(language == "de"){
+        var pictures = ["new_images/sixth/Beschriftung_BPA.png",
+        "new_images/sixth/Beschriftung_Flammschutzmittel.png",
+        "new_images/sixth/Beschriftung_Phthalate.png",
+        "new_images/sixth/Beschriftung_Schwermetalle.png"];
 
-    var products = ["new_images/sixth/Icons Bisphenol A.png",
-    "new_images/sixth/Icons Flammschutzmittel.png",
-    "new_images/sixth/Icons Phthalate.png",
-    "new_images/sixth/Icons Schwermetalle.png"];
+        var products = ["new_images/sixth/Neu_Icons_BisphenolA.png",
+        "new_images/sixth/Neu_Icons_Flammschutzmittel.png",
+        "new_images/sixth/Neu_Icons_Phthalate.png",
+        "new_images/sixth/Neu_Icons_Schwermetalle.png"];
 
-    var labels = ["new_images/sixth/Box_BPA_Kunststoffarten.png",
-    "new_images/sixth/Box_Flammschutzmittel.png",
-    "new_images/sixth/Box_Phthalate.png",
-    "new_images/sixth/Box_Schwermetalle.png"];
+        var labels = ["new_images/sixth/Box_BPA_Kunststoffarten.png",
+        "new_images/sixth/Box_Flammschutzmittel.png",
+        "new_images/sixth/Box_Phthalate.png",
+        "new_images/sixth/Box_Schwermetalle.png"];
+    } else {
+        var pictures = ["new_images/sixth/Beschriftung_BPA_Englisch.png",
+        "new_images/sixth/Beschriftung_Flammschutzmittel_Englisch.png",
+        "new_images/sixth/Beschriftung_Phthalate_Englisch.png",
+        "new_images/sixth/Beschriftung_Schwermetalle_Englisch.png"];
+
+        var products = ["new_images/sixth/Neu_Icons_BisphenolA_Englisch.png",
+        "new_images/sixth/Neu_Icons_FlameRetardants_Englisch.png",
+        "new_images/sixth/Neu_Icons_Phthalates_Englisch.png",
+        "new_images/sixth/Neu_Icons_HeavyMetals_Englisch.png"];
+
+        var labels = ["new_images/sixth/Box_BPA_Kunststoffarten_Englisch.png",
+        "new_images/sixth/Box_Flammschutzmittel_Englisch.png",
+        "new_images/sixth/Box_Phthalate_Englisch.png",
+        "new_images/sixth/Box_Schwermetalle_Englisch.png"];
+    }
 
 
     if(health_toggle_persistence){
@@ -405,13 +452,22 @@ function toggle_health(num_issue = -1) {
 
 }
 
-function toggle_health_products(){
+function toggle_health_products(mode = 0){
 
     var togglebutton = document.getElementById("health_toggle");
-    togglebutton.src = !health_toggle_persistence ? "new_images/sixth/Button_Auswirkungen.png" : "new_images/sixth/Button_Produkte.png";
 
-    // here the toggle logic is set
-    health_toggle_persistence = !health_toggle_persistence;
+    if( mode == 0 ){
+        // here the toggle logic is set
+        health_toggle_persistence = !health_toggle_persistence;
+    }
+
+
+    if(language == "de"){
+        togglebutton.src = health_toggle_persistence ? "new_images/sixth/Button_Auswirkungen.png" : "new_images/sixth/Button_Produkte.png";
+    } else {
+        togglebutton.src = health_toggle_persistence ? "new_images/sixth/Button_Auswirkungen_Englisch.png" : "new_images/sixth/Button_Produkte_Englisch.png";
+    }
+
 
     // toggle_health is called by the buttons to change the shown content
     // in this case, we just want to reload the page because product view has been toggled
@@ -421,26 +477,58 @@ function toggle_health_products(){
 
 
 
-function toggle_contact(num_issue) {
+function toggle_contact(num_issue = -1) {
+
+    console.log("still working here");
+
+    if(num_issue == -1){
+        num_issue = num_contact;
+    } else {
+        num_contact = num_issue;
+    }
+
 
     var issues = ["atmung", "verzehr", "hautkontakt"];
 
-    var buttons = ["new_images/fifth/Atmung.png",
-                   "new_images/fifth/Verzehr.png",
-                   "new_images/fifth/Hautkontakt.png"];
+    if(language == "de") {
 
-    var buttons_aktiv = ["new_images/fifth/Atmung_ausgewählt.png",
-                    "new_images/fifth/Verzehr_ausgewählt.png",
-                    "new_images/fifth/Hautkontakt_ausgewählt.png"];
+        var buttons = ["new_images/fifth/Atmung.png",
+                       "new_images/fifth/Verzehr.png",
+                       "new_images/fifth/Hautkontakt.png"];
+
+        var buttons_aktiv = ["new_images/fifth/Atmung_ausgewählt.png",
+                        "new_images/fifth/Verzehr_ausgewählt.png",
+                        "new_images/fifth/Hautkontakt_ausgewählt.png"];
 
 
-    var descriptions = ["new_images/fifth/Atmung_beschreibung.png",
-                    "new_images/fifth/Verzehr_beschreibung.png",
-                    "new_images/fifth/Hautkontakt_beschreibung.png"];
+        var descriptions = ["new_images/fifth/Atmung_beschreibung.png",
+                        "new_images/fifth/Verzehr_beschreibung.png",
+                        "new_images/fifth/Hautkontakt_beschreibung.png"];
 
-    var icons = ["new_images/fifth/Icons_Atmen.png",
-                    "new_images/fifth/Icons_Verzehr.png",
-                    "new_images/fifth/Icons_Hautkontakt.png"];
+        var icons = ["new_images/fifth/Icons_Atmen_NEU.png",
+                        "new_images/fifth/Icons_Verzehr_NEU.png",
+                        "new_images/fifth/Icons_Hautkontakt_NEU.png"];
+
+    } else {
+
+        var buttons = ["new_images/fifth/Breathing.png",
+                       "new_images/fifth/consumption.png",
+                       "new_images/fifth/Skin contact.png"];
+
+        var buttons_aktiv = ["new_images/fifth/Atmung_ausgewählt_Englisch.png",
+                        "new_images/fifth/Verzehr_ausgewählt_Englisch.png",
+                        "new_images/fifth/Hautkontakt_ausgewählt_Englisch.png"];
+
+
+        var descriptions = ["new_images/fifth/Text_Breathing.png",
+                        "new_images/fifth/Text_Consumption.png",
+                        "new_images/fifth/Text_Skin contact.png"];
+
+        var icons = ["new_images/fifth/Icons_Atmen_NEU_Englisch.png",
+                        "new_images/fifth/Icons_Verzehr_NEU_Englisch.png",
+                        "new_images/fifth/Icons_Haut_NEU_Englisch.png"];
+
+    }
 
 
     // loop over all four available chemical buttons and change the active/passive state
