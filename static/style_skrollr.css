@@ -44,6 +44,16 @@
     background-size: 100%;
 }
 
+#toggle_button_language {
+    border: none;
+    position: absolute;
+}
+
+#toggle_button_language:hover {
+    transform: translateY(-5px);
+}
+
+
 #first_infobutton:hover {
     transform: translateY(-5px);
 }

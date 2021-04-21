@@ -18,10 +18,6 @@
 <!--This is a Div to create a Dot Schrollbar! -->
 
 <div class="vNav">
-    <button id="toggle_button_language" onclick="toggle_language()"
-    style="top:5.5%; right:8.4%; width:4%; height: 3%; z-index: 99;">Lang
-    </button>
-
     <ul class="vNav">
         <li >
             <a id="0"
@@ -42,7 +38,7 @@
                 data-1300="opacity: 0;"
                 data-1900="opacity: 1;"
                 style=" position: absolute; width: 60%; left: 22%;">
-
+            <div class="label"></div>
         </a></li>
         <li ><a id="1"
                 data-1300="background-color: rgb(135,145,243,0);"
@@ -191,6 +187,10 @@
                href="#eighth"
                data-menu-top="23900">
         </a>
+
+        <img id="toggle_button_language" onclick="toggle_language()"
+            style="top:5.5%; right:8.4%; height: 3%;"
+                src="new_images/first/DE.png">
 
         <img src="new_images/first/Logo.png"
              style="top:5.5%; left:3.4%; width:3%;">

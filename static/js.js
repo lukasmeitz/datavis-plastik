@@ -34,10 +34,17 @@ function toggle_language() {
         elements[i].style.display = "none";
     }
 
+    text = document.getElementById("magnifier-text");
+    button = document.getElementById("toggle_button_language");
+
     if(language == "de") {
         language = "en";
+        text.src = "new_images/seventh/Text_Lupe_Englisch.png";
+        button.src = "new_images/first/EN.png";
     } else {
         language = "de";
+        text.src = "new_images/seventh/Text_Lupe.png";
+        button.src = "new_images/first/DE.png";
     }
 
     elements = document.getElementsByClassName(language);
@@ -88,8 +95,7 @@ function scrolling(deltaY, locking=true) {
     let page_number = Math.round(-1 * offset / window.innerHeight);
 
     setScrollBar(page_number);
-    console.log("page number: " + page_number);
-
+    //console.log("page number: " + page_number);
 
     text_box.style.transform = "translateY(" + (offset * 1.0) + "px)";
     background_box.style.transform = "translateY(" + (offset * 0.2) + "px)";
@@ -146,7 +152,6 @@ function setClickScrollPage(page_number) {
     for(let j = 0; j < Math.abs(deltaY) ; j++){
         scrolling(deltaY, locking=false);
     }
-
 
 }
 
@@ -358,7 +363,7 @@ function toggle_health(num_issue = -1) {
     }
 
     // not used any more: this was part of changing the textbox background
-    console.log("issue is: " + issues[num_issue]);
+    //console.log("issue is: " + issues[num_issue]);
     document.getElementById("health_info_box").style.backgroundColor = colors[num_issue];
 
     // loop over all four available chemical buttons and change the active/passive state
@@ -479,8 +484,6 @@ function toggle_health_products(mode = 0){
 
 function toggle_contact(num_issue = -1) {
 
-    console.log("still working here");
-
     if(num_issue == -1){
         num_issue = num_contact;
     } else {
@@ -542,7 +545,7 @@ function toggle_contact(num_issue = -1) {
         if(i == num_issue){
             // case true: this is the button that was pressed
             elem.childNodes[1].src = buttons_aktiv[i];
-            console.log(elem.childNodes);
+            //console.log(elem.childNodes);
 
             anim.classList.remove("hide");
             anim.classList.add("show");
