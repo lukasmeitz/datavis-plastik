@@ -43,22 +43,43 @@
     position: absolute;
 }
 
-#toggle_button_language:hover {
+#toggle_button_language_de:hover {
+    transform: translateY(-5px);
+}
+#toggle_button_language_en:hover {
     transform: translateY(-5px);
 }
 
-#first_infobutton {
+#first_infobutton_de {
     border: none;
     position: absolute;
     background-image: url("new_images/first/Info_Button.png");
     background-size: 100%;
+    background-repeat: no-repeat;
 }
 
-#first_infobutton:hover {
+#first_infobutton_de:hover {
     background-image: url("new_images/first/Infobutton_mouseover.png");
 }
 
-#first_infobutton:active {
+#first_infobutton_de:active {
+    transform: translateY(-5px);
+}
+
+
+#first_infobutton_en {
+    border: none;
+    position: absolute;
+    background-image: url("new_images/first/Info_Button.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+#first_infobutton_en:hover {
+    background-image: url("new_images/first/Infobutton_mouseover_Englisch.png");
+}
+
+#first_infobutton_en:active {
     transform: translateY(-5px);
 }
 
