@@ -3,7 +3,7 @@
 //document.body.style.overflow = 'hidden';
 
 var scroll_lock = false;
-var language = "en";
+var language = "de";
 
 var indirect_num = 0;
 var direct_num = 0;
@@ -40,11 +40,11 @@ function toggle_language() {
     if(language == "de") {
         language = "en";
         text.src = "new_images/seventh/Text_Lupe_Englisch.png";
-        button.src = "new_images/first/EN.png";
+        button.src = "new_images/first/DE.png";
     } else {
         language = "de";
         text.src = "new_images/seventh/Text_Lupe.png";
-        button.src = "new_images/first/DE.png";
+        button.src = "new_images/first/EN.png";
     }
 
     elements = document.getElementsByClassName(language);
