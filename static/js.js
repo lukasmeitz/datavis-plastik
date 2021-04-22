@@ -581,6 +581,8 @@ function toggle_contact(num_issue = -1) {
 var imgs = document.images,
     len = imgs.length,
     counter = 0;
+splash = document.getElementById("splashscreendiv");
+bar = document.getElementById("splash_progressbar");
 
 [].forEach.call( imgs, function( img ) {
     if(img.complete)
@@ -589,12 +591,35 @@ var imgs = document.images,
       img.addEventListener( 'load', incrementCounter, false );
 } );
 
-splash = document.getElementById("splashscreendiv");
 
 function incrementCounter() {
     counter++;
-    if ( counter === len ) {
+    var percentage = parseInt(counter / len * 100);
+    console.log(percentage);
 
+    document.getElementById("splash_progressbar_0").classList.add('hide');
+    document.getElementById("splash_progressbar_20").classList.add('hide');
+    document.getElementById("splash_progressbar_60").classList.add('hide');
+    document.getElementById("splash_progressbar_40").classList.add('hide');
+    document.getElementById("splash_progressbar_80").classList.add('hide');
+    document.getElementById("splash_progressbar_100").classList.add('hide');
+
+
+    if(percentage > 80){
+        document.getElementById("splash_progressbar_80").classList.remove('hide');
+    } else if(percentage > 60){
+        document.getElementById("splash_progressbar_60").classList.remove('hide');
+    } else if(percentage > 40){
+        document.getElementById("splash_progressbar_40").classList.remove('hide');
+    } else if(percentage > 20){
+        document.getElementById("splash_progressbar_20").classList.remove('hide');
+    } else if(percentage > 0){
+        document.getElementById("splash_progressbar_0").classList.remove('hide');
+    }
+
+
+    if ( counter === len ) {
+        //bar.src = "new_images/first/Loading_Animation_100.png";
         splash.style.animation="fadeOut 2s";
         setTimeout(function(){
             splash.classList.add("hide");
