@@ -594,7 +594,7 @@ current_val = 0;
 
 function display_bar(value){
 
-    if(value >= (current_val+10) && current_val < 100){
+    if(value >= (current_val+20) && current_val < 100){
 
 
 
@@ -602,7 +602,7 @@ function display_bar(value){
         document.getElementById(active_element).classList.add('hide');
         console.log("disabled" + active_element)
 
-        current_val += 10;
+        current_val += 20;
 
         active_element = "splash_progressbar_" + current_val;
         document.getElementById(active_element).classList.remove('hide');
@@ -620,10 +620,10 @@ function incrementCounter() {
     if ( counter === len ) {
         //bar.src = "new_images/first/Loading_Animation_100.png";
         display_bar(100);
-        splash.style.animation="fadeOut 2s";
+        splash.style.animation="fadeOut 1s";
         setTimeout(function(){
             splash.classList.add("hide");
-        }, 2000);
+        }, 1000);
     }
 }
 
