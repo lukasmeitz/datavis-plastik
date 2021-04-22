@@ -583,6 +583,7 @@ var imgs = document.images,
     counter = 0;
 splash = document.getElementById("splashscreendiv");
 bar = document.getElementById("splash_progressbar");
+current_val = 0;
 
 [].forEach.call( imgs, function( img ) {
     if(img.complete)
@@ -591,39 +592,44 @@ bar = document.getElementById("splash_progressbar");
       img.addEventListener( 'load', incrementCounter, false );
 } );
 
+function display_bar(value){
+
+    if(value >= (current_val+10) ){
+
+        current_val += 10;
+
+        document.getElementById("splash_progressbar_0").classList.add('hide');
+        document.getElementById("splash_progressbar_10").classList.add('hide');
+        document.getElementById("splash_progressbar_20").classList.add('hide');
+        document.getElementById("splash_progressbar_30").classList.add('hide');
+        document.getElementById("splash_progressbar_40").classList.add('hide');
+        document.getElementById("splash_progressbar_50").classList.add('hide');
+        document.getElementById("splash_progressbar_60").classList.add('hide');
+        document.getElementById("splash_progressbar_70").classList.add('hide');
+        document.getElementById("splash_progressbar_80").classList.add('hide');
+        document.getElementById("splash_progressbar_90").classList.add('hide');
+        document.getElementById("splash_progressbar_100").classList.add('hide');
+
+        var active_element = "splash_progressbar_" + current_val;
+        document.getElementById(active_element).classList.remove('hide');
+
+    }
+
+}
 
 function incrementCounter() {
     counter++;
     var percentage = parseInt(counter / len * 100);
-    console.log(percentage);
-
-    document.getElementById("splash_progressbar_0").classList.add('hide');
-    document.getElementById("splash_progressbar_20").classList.add('hide');
-    document.getElementById("splash_progressbar_60").classList.add('hide');
-    document.getElementById("splash_progressbar_40").classList.add('hide');
-    document.getElementById("splash_progressbar_80").classList.add('hide');
-    document.getElementById("splash_progressbar_100").classList.add('hide');
-
-
-    if(percentage > 80){
-        document.getElementById("splash_progressbar_80").classList.remove('hide');
-    } else if(percentage > 60){
-        document.getElementById("splash_progressbar_60").classList.remove('hide');
-    } else if(percentage > 40){
-        document.getElementById("splash_progressbar_40").classList.remove('hide');
-    } else if(percentage > 20){
-        document.getElementById("splash_progressbar_20").classList.remove('hide');
-    } else if(percentage > 0){
-        document.getElementById("splash_progressbar_0").classList.remove('hide');
-    }
-
+    display_bar(percentage);
+    //console.log(percentage);
 
     if ( counter === len ) {
         //bar.src = "new_images/first/Loading_Animation_100.png";
-        splash.style.animation="fadeOut 2s";
+        display_bar(100);
+        splash.style.animation="fadeOut 3s";
         setTimeout(function(){
             splash.classList.add("hide");
-        }, 2000);
+        }, 3000);
     }
 }
 

@@ -16,6 +16,13 @@
     z-index: 4;
 }
 
+#splashscreendiv img {
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%)
+}
+
 @-webkit-keyframes fadeOut {
     0% { opacity: 1;}
     100% { opacity: 0;}
