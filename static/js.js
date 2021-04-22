@@ -626,10 +626,10 @@ function incrementCounter() {
     if ( counter === len ) {
         //bar.src = "new_images/first/Loading_Animation_100.png";
         display_bar(100);
-        splash.style.animation="fadeOut 3s";
+        splash.style.animation="fadeOut 2s";
         setTimeout(function(){
             splash.classList.add("hide");
-        }, 3000);
+        }, 2000);
     }
 }
 
