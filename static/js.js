@@ -594,23 +594,17 @@ current_val = 0;
 
 function display_bar(value){
 
-    if(value >= (current_val+10) ){
+    if(value >= (current_val+10) && current_val < 100){
+
+
+
+        var active_element = "splash_progressbar_" + current_val;
+        document.getElementById(active_element).classList.add('hide');
+        console.log("disabled" + active_element)
 
         current_val += 10;
 
-        document.getElementById("splash_progressbar_0").classList.add('hide');
-        document.getElementById("splash_progressbar_10").classList.add('hide');
-        document.getElementById("splash_progressbar_20").classList.add('hide');
-        document.getElementById("splash_progressbar_30").classList.add('hide');
-        document.getElementById("splash_progressbar_40").classList.add('hide');
-        document.getElementById("splash_progressbar_50").classList.add('hide');
-        document.getElementById("splash_progressbar_60").classList.add('hide');
-        document.getElementById("splash_progressbar_70").classList.add('hide');
-        document.getElementById("splash_progressbar_80").classList.add('hide');
-        document.getElementById("splash_progressbar_90").classList.add('hide');
-        document.getElementById("splash_progressbar_100").classList.add('hide');
-
-        var active_element = "splash_progressbar_" + current_val;
+        active_element = "splash_progressbar_" + current_val;
         document.getElementById(active_element).classList.remove('hide');
 
     }
