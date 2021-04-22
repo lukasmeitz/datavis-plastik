@@ -577,6 +577,31 @@ function toggle_contact(num_issue = -1) {
 }
 
 
+// check image status
+var imgs = document.images,
+    len = imgs.length,
+    counter = 0;
+
+[].forEach.call( imgs, function( img ) {
+    if(img.complete)
+      incrementCounter();
+    else
+      img.addEventListener( 'load', incrementCounter, false );
+} );
+
+splash = document.getElementById("splashscreendiv");
+
+function incrementCounter() {
+    counter++;
+    if ( counter === len ) {
+
+        splash.style.animation="fadeOut 2s";
+        setTimeout(function(){
+            splash.classList.add("hide");
+        }, 2000);
+    }
+}
+
 
 
 // initialize

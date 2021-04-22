@@ -251,7 +251,7 @@ b {
     display: flex;
     flex-flow: column;
     transition: transform 630ms;
-    z-index: -1;
+    z-index: 0;
     background-repeat: no-repeat;
     background-position: center;
     background-size: auto;
@@ -265,7 +265,7 @@ b {
     top: 33%;
     right: 2%;
     width: 50px;
-    z-index: 9999;
+    z-index: 3;
     list-style-type: none;
 }
 
