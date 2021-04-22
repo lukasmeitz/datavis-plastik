@@ -27,7 +27,11 @@ window.addEventListener('wheel', function(event)
 });
 
 
-function toggle_language() {
+function toggle_language(new_language) {
+
+    if(new_language == language){
+        return;
+    }
 
     elements = document.getElementsByClassName(language);
     for (var i = 0; i < elements.length; i++) {
@@ -35,16 +39,19 @@ function toggle_language() {
     }
 
     text = document.getElementById("magnifier-text");
-    button = document.getElementById("toggle_button_language");
+    button_de = document.getElementById("toggle_button_language_de");
+    button_en = document.getElementById("toggle_button_language_en");
 
     if(language == "de") {
         language = "en";
         text.src = "new_images/seventh/Text_Lupe_Englisch.png";
-        button.src = "new_images/first/DE.png";
+        button_de.src = "new_images/first/DE.png";
+        button_en.src = "new_images/first/EN_ausgewählt.png";
     } else {
         language = "de";
         text.src = "new_images/seventh/Text_Lupe.png";
-        button.src = "new_images/first/EN.png";
+        button_de.src = "new_images/first/DE_ausgewählt.png";
+        button_en.src = "new_images/first/EN.png";
     }
 
     elements = document.getElementsByClassName(language);

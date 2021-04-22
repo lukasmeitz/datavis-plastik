@@ -37,12 +37,6 @@
     color: #3e4cff;
 }
 
-#first_infobutton {
-    border: none;
-    position: absolute;
-    background-image: url("new_images/first/Info_Button.png");
-    background-size: 100%;
-}
 
 #toggle_button_language {
     border: none;
@@ -53,13 +47,19 @@
     transform: translateY(-5px);
 }
 
+#first_infobutton {
+    border: none;
+    position: absolute;
+    background-image: url("new_images/first/Info_Button.png");
+    background-size: 100%;
+}
 
 #first_infobutton:hover {
-    transform: translateY(-5px);
+    background-image: url("new_images/first/Infobutton_mouseover.png");
 }
 
 #first_infobutton:active {
-    background-image: url("new_images/first/Info_Button_pressed.png");
+    transform: translateY(-5px);
 }
 
 
