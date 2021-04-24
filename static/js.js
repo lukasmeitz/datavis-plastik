@@ -137,13 +137,18 @@ function setScrollBar(page_number) {
 
 /* show label of navbar */
 function showNavLabel(event) {
-    event.getElementsByClassName("label")[0].style.display = "block";
+    if(language == "de"){
+        event.getElementsByClassName("label")[0].style.display = "block";
+    } else {
+        event.getElementsByClassName("label")[1].style.display = "block";
+    }
 }
 /*
 hiden die Label
  */
 function hideNavLabel(event) {
     event.getElementsByClassName("label")[0].style.display = "none";
+    event.getElementsByClassName("label")[1].style.display = "none";
 }
 
 function setClickScrollPage(page_number) {
