@@ -598,24 +598,11 @@ function display_bar(value){
 
     if(value >= (current_val+10) && current_val < 100){
 
-        var active_element_name = "splash_progressbar_" + 0; //current_val;
+        var active_element_name = "splash_progressbar_0";
         var active_element = document.getElementById(active_element_name);
 
         current_val += 10;
         active_element.src = "new_images/first/Loading_Animation_" + current_val + ".png";
-
-        return;
-
-        var new_element_name = "splash_progressbar_" + (current_val+10);
-        var new_element = document.getElementById(new_element_name);
-
-        if(new_element.complete && new_element.naturalHeight !== 0) {
-
-            new_element.classList.remove('hide');
-            active_element.classList.add('hide');
-
-            current_val += 10;
-        }
 
     }
 
