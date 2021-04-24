@@ -27,32 +27,6 @@ window.addEventListener('wheel', function(event)
 });
 
 
-function preloader() {
-	if (document.images) {
-	 var images = [];
-
-	 for(i = 0; i < 11; i++)
-	    images[i] = new Image();
-		images[i].src = "new_images/first/Loading_Animation_" + i + "png";
-	}
-}
-function addLoadEvent(func) {
-	var oldonload = window.onload;
-	if (typeof window.onload != 'function') {
-		window.onload = func;
-	} else {
-		window.onload = function() {
-			if (oldonload) {
-				oldonload();
-			}
-			func();
-		}
-	}
-}
-addLoadEvent(preloader);
-
-
-
 function toggle_language(new_language) {
 
     if(new_language == language){
