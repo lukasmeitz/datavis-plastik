@@ -596,13 +596,18 @@ function display_bar(value){
 
     if(value >= (current_val+10) && current_val < 100){
 
-        var active_element = "splash_progressbar_" + current_val;
+        var active_element_name = "splash_progressbar_" + current_val;
+        var active_element = document.getElementById(active_element_name);
         var new_element_name = "splash_progressbar_" + (current_val+10);
         var new_element = document.getElementById(new_element_name);
 
         if(new_element.complete && new_element.naturalHeight !== 0) {
+
             new_element.classList.remove('hide');
-            document.getElementById(active_element).classList.add('hide');
+            setTimeout(function(){
+                active_element.classList.add('hide');
+            }, 100);
+
             current_val += 10;
         }
 

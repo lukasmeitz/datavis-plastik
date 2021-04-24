@@ -17,9 +17,10 @@
 }
 
 #splashscreendiv img {
-    position: absolute;
+  position: absolute;
   top: 50%;
   left: 50%;
+  width: 16.5%;
   transform: translate(-50%, -50%)
 }
 
@@ -30,6 +31,15 @@
 @keyframes fadeOut {
     0% { opacity: 1;}
     100% { opacity: 0;}
+}
+
+@-webkit-keyframes fadeIn {
+    0% { opacity: 0;}
+    100% { opacity: 1;}
+}
+@keyframes fadeIn {
+    0% { opacity: 0;}
+    100% { opacity: 1;}
 }
 
 #content  div {
