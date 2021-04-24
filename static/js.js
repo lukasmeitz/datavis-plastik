@@ -583,9 +583,7 @@ var imgs = document.images,
     counter = 0;
 
 splash = document.getElementById("splashscreendiv");
-bar = document.getElementById("splash_progressbar");
 current_val = 0;
-
 
 [].forEach.call( imgs, function( img ) {
     if(img.complete)
