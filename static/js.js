@@ -597,7 +597,6 @@ function display_bar(value){
     if(value >= (current_val+10) && current_val < 100){
 
         var active_element = "splash_progressbar_" + current_val;
-        document.getElementById(active_element).classList.add('hide');
         console.log("disabled " + active_element);
 
         var new_element_name = "splash_progressbar_" + (current_val+10);
@@ -605,8 +604,10 @@ function display_bar(value){
         console.log(new_element.complete);
 
         if(new_element.complete) {
+
             console.log("new element loaded");
             new_element.classList.remove('hide');
+            document.getElementById(active_element).classList.add('hide');
             current_val += 10;
         }
 
