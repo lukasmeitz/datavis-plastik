@@ -580,10 +580,12 @@ function toggle_contact(num_issue = -1) {
 // check image status
 var imgs = document.images,
     len = imgs.length,
-    counter = 0;
+    counter = 0,
+    anim_block = false;
 splash = document.getElementById("splashscreendiv");
 bar = document.getElementById("splash_progressbar");
 current_val = 0;
+
 
 [].forEach.call( imgs, function( img ) {
     if(img.complete)
@@ -596,16 +598,23 @@ function display_bar(value){
 
     if(value >= (current_val+10) && current_val < 100){
 
+
+        var last_element_name = "splash_progressbar_" + (current_val-10);
+
         var active_element_name = "splash_progressbar_" + current_val;
         var active_element = document.getElementById(active_element_name);
+
         var new_element_name = "splash_progressbar_" + (current_val+10);
         var new_element = document.getElementById(new_element_name);
 
-        if(new_element.complete && new_element.naturalHeight !== 0) {
+        if(new_element.complete && new_element.naturalHeight !== 0 && !anim_block) {
 
+            anim_block = true;
             new_element.classList.remove('hide');
+
             setTimeout(function(){
                 active_element.classList.add('hide');
+                anim_block = false;
             }, 100);
 
             current_val += 10;
