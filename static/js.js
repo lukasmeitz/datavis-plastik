@@ -598,8 +598,13 @@ function display_bar(value){
 
     if(value >= (current_val+10) && current_val < 100){
 
-        var active_element_name = "splash_progressbar_" + current_val;
+        var active_element_name = "splash_progressbar_" + 0; //current_val;
         var active_element = document.getElementById(active_element_name);
+
+        current_val += 10;
+        active_element.src = "new_images/first/Loading_Animation_" + current_val + ".png";
+
+        return;
 
         var new_element_name = "splash_progressbar_" + (current_val+10);
         var new_element = document.getElementById(new_element_name);
@@ -620,10 +625,8 @@ function incrementCounter() {
     counter++;
     var percentage = parseInt(counter / len * 100);
     display_bar(percentage);
-    //console.log(percentage);
 
     if ( counter === len ) {
-        //bar.src = "new_images/first/Loading_Animation_100.png";
         display_bar(100);
         splash.style.animation="fadeOut 1s";
         setTimeout(function(){
