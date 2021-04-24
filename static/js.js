@@ -615,10 +615,12 @@ function incrementCounter() {
 
     if ( counter === len ) {
         display_bar(100);
-        splash.style.animation="fadeOut 1s";
+        setTimeout(function(){
+            splash.style.animation="fadeOut 1s";
+        }, 800);
         setTimeout(function(){
             splash.classList.add("hide");
-        }, 1000);
+        }, 1800);
     }
 }
 
