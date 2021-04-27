@@ -528,7 +528,7 @@ function toggle_contact(num_issue = -1) {
 
         var buttons = ["new_images/fifth/Breathing_Englisch.png",
                        "new_images/fifth/Verzehr_Englisch.png",
-                       "new_images/fifth/Haukontakt_Engl.png"];
+                       "new_images/fifth/Hautkontakt_Engl.png"];
 
         var buttons_aktiv = ["new_images/fifth/Breathing_ausgewählt_Englisch.png",
                         "new_images/fifth/Verzehr_ausgewählt_Englisch.png",
