@@ -526,11 +526,11 @@ function toggle_contact(num_issue = -1) {
 
     } else {
 
-        var buttons = ["new_images/fifth/Breathing.png",
-                       "new_images/fifth/consumption.png",
-                       "new_images/fifth/Skin contact.png"];
+        var buttons = ["new_images/fifth/Breathing_Englisch.png",
+                       "new_images/fifth/Verzehr_Englisch.png",
+                       "new_images/fifth/Haukontakt_Engl.png"];
 
-        var buttons_aktiv = ["new_images/fifth/Atmung_ausgewählt_Englisch.png",
+        var buttons_aktiv = ["new_images/fifth/Breathing_ausgewählt_Englisch.png",
                         "new_images/fifth/Verzehr_ausgewählt_Englisch.png",
                         "new_images/fifth/Hautkontakt_ausgewählt_Englisch.png"];
 
